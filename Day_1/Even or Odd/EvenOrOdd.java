@@ -13,7 +13,11 @@ public class EvenOrOdd {
      */
     public static boolean evenOrOdd(int n) {
         //  Your code goes here....
-        //  
-        return false;
+        int even = n % 2 ;
+        if (even == 0){
+            return true ;
+        }else {
+            return false; 
+        }
     }
 }
