@@ -25,11 +25,27 @@ public class FrontTimes {
      */
     public static String frontTimes(String str, int n) {
         //  Your code goes here....
-        while(n > 0) {
-            if (str.length() < 3){
-                
+        String empty = "" ; 
+        if (n > 0){
+            while(n > 0) {
+                if (str.length() == 0){
+                    return str ;
+                }else if(str.length() == 1 || str.length() == 2){
+                    empty = empty + str ;
+                }else {
+                    String sub = str.substring(0,3) ;
+                    empty = empty + sub ; 
+                }
+                n = n - 1 ; 
             }
+            return empty ;
+        }else {
+            return "" ;
         }
-        return "";
+        
+    }
+
+    public static void main(String[] args) {
+        System.out.println(FrontTimes.frontTimes("A", 4));
     }
 }
