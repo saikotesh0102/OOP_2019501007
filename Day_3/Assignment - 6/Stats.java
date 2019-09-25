@@ -25,7 +25,8 @@
  * @author Siva Sankar
  */
 
-import java.util.*;
+import java.util.* ;
+import java.lang.* ;
 
 public class Stats {
 
@@ -37,8 +38,17 @@ public class Stats {
      */
     public static double mean(int[] arr) {
         //  Your code goes here....
-
-        return 0.0;
+        if (arr.length == 0) {
+            return 0 ;
+        }else {
+        double sum = 0.0 ;
+        for (int i = 0 ; i < arr.length ; i++){
+            sum = sum + arr[i] ; 
+        }
+        double mean = sum / (arr.length) ;
+        return mean ;
+        }
+        
     }
 
     /**
@@ -52,8 +62,13 @@ public class Stats {
      */
     public static double median(int[] arr) {
         //  Your code goes here...
-
-        return 0.0;
+        Arrays.sort(arr) ;
+        int middle = arr.length / 2 ;
+        if(arr.length % 2 == 1) {
+            return arr[middle] ;
+        }else {
+            return (arr[middle] + arr[middle - 1]) / 2.0 ;
+        }
     }
 
     /**
@@ -65,8 +80,25 @@ public class Stats {
      */
     public static int mode(int[] arr) {
         //  Your code goes here....
-
-        return 0;
+        int maxValue = arr[0] ;
+        int maxCount = 0 ;
+        for (int i = 0; i < arr.length; ++i) {
+            int count = 0 ;
+            for (int j = 0; j < arr.length; ++j) {
+                if (arr[j] == arr[i]) {
+                    count = count + 1 ; 
+                }
+                if (count > maxCount) {
+                    maxCount = count ;
+                    maxValue = arr[i] ;
+                }
+            }
+        }
+        if (maxCount == 1) {
+            return 0 ;
+        }else {
+            return maxValue ;
+        }
     }
 
     /**
@@ -78,8 +110,13 @@ public class Stats {
      */
     public static double variance(int[] arr) {
         //  Your code goes here....
-
-        return 0.0;
+        double var = 0.0 ;
+        // int sumSquare = 0 ;
+        for(int i = 0 ; i < arr.length ; i++){
+            var += (arr[i] - mean(arr)) * (arr[i] - mean(arr)) ;
+            // var = sumSquare / arr.length ;
+        }
+        return var/arr.length ;
     }
 
     /**
@@ -90,7 +127,7 @@ public class Stats {
      */
     public static double standardDeviation(int[] arr) {
         //  Your code goes here....
-
-        return 0.0;
+        double deviation = Math.sqrt(variance(arr)) ;
+        return deviation ;
     }
 }
