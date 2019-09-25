@@ -19,6 +19,5 @@ public class Test {
         }else {
             isFalse = false;
         }
-        System.out.println(isFalse);
     }
 }

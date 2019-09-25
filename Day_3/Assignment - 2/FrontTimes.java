@@ -25,7 +25,11 @@ public class FrontTimes {
      */
     public static String frontTimes(String str, int n) {
         //  Your code goes here....
-        
+        while(n > 0) {
+            if (str.length() < 3){
+                
+            }
+        }
         return "";
     }
 }
