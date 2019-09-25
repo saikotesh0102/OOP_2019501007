@@ -11,7 +11,8 @@
  * 
  * @author Siva Sankar
  */
-
+import java.lang.*;
+import java.util.*;
 public class MiniMaxSum {
 
     /**
@@ -22,8 +23,19 @@ public class MiniMaxSum {
      */
     public static int min(int[] arr) {
         //  Your code goes here...
-        
-        return -1;
+        int[] arrDup = arr ;
+        //System.out.println(Arrays.toString(arrDup));
+        int temp ;
+        for (int i = 0; i < arrDup.length ; i++){
+            for (int j = i + 1; j < arrDup.length ; j++){
+                if ((arrDup[i] > arrDup[j])) {
+                    temp = arrDup[i] ;
+                    arrDup[i] = arrDup[j] ;
+                    arrDup[j] = temp ;
+                }
+            }
+        }
+        return arrDup[0] ;
     }
 
     /**
@@ -34,8 +46,18 @@ public class MiniMaxSum {
      */
     public static int max(int[] arr) {
         //  Your code goes here...
-        
-        return -1;
+        int [] arrDup = arr ;
+        int temp ;
+        for (int i = 0; i < arrDup.length ; i++){
+            for (int j = i + 1; j < arrDup.length ; j++){
+                if ((arrDup[i] < arrDup[j])) {
+                    temp = arrDup[i] ;
+                    arrDup[i] = arrDup[j] ;
+                    arrDup[j] = temp ;
+                }
+            }
+        }
+        return arrDup[0];
     }
 
     /**
@@ -46,8 +68,11 @@ public class MiniMaxSum {
      */
     public static int sum(int[] arr) {
         //  Your code goes here...
-        
-        return -1;
+        int arrsum = 0 ;
+        for (int i = 0; i < arr.length; i++) {
+            arrsum = arrsum + arr[i] ;
+        }
+        return arrsum ;
     }
     
     /**
@@ -61,6 +86,6 @@ public class MiniMaxSum {
     public static String miniMaxSum(int[] arr) {
         //  Your code goes here...
         
-        return "";
+        return (sum(arr) - min(arr)) + "," + (sum(arr) - max(arr)) ;
     }
 }
