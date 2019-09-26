@@ -26,7 +26,7 @@
  */
 
 import java.util.* ;
-import java.lang.* ;
+//import java.lang.* ;
 
 public class Stats {
 
@@ -114,7 +114,6 @@ public class Stats {
         // int sumSquare = 0 ;
         for(int i = 0 ; i < arr.length ; i++){
             var += (arr[i] - mean(arr)) * (arr[i] - mean(arr)) ;
-            // var = sumSquare / arr.length ;
         }
         return var/arr.length ;
     }
