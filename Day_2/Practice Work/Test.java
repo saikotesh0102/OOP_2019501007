@@ -12,6 +12,6 @@ public class Test {
     //    a = a++ ;
     //    System.out.println(a + " " + b) ;
     int [] arr = new int[5] ;
-    System.out.println(arr);
+    System.out.println(arr) ;
     }
 }
