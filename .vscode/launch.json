@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - CardCatalog",
+            "request": "launch",
+            "mainClass": "CardCatalog",
+            "projectName": "OOP_2019501007_58d9878e"
+        }
+    ]
+}
