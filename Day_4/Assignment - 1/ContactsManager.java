@@ -37,7 +37,12 @@ class ContactsManager {
      * 1. Initializes the friendsCount to 0 as there no contacts in the list.
      * 2. myFriends with array initial size of 500
      */
- 
+    Contact [] myFriends ;
+    int friendsCount ;
+    public ContactsManager() {
+        this.myFriends = new Contact[500] ;
+        this.friendsCount = 0 ;
+    }
     /**
      * The addContact method takes in a parameter of type contact object and 
      * adds this to the contact list.
@@ -45,7 +50,7 @@ class ContactsManager {
      */
     public void addContact(Contact contact) {
         //  Your code goes here....
-
+        myFriends[friendsCount++] = contact ;
         //  Nothing to be returned... As this method is void...
     }
  
@@ -57,8 +62,14 @@ class ContactsManager {
      */
     public Contact searchContact(String searchName) {
         //  Your code goes here....
-
-        return null;
+        for (int i = 0; i < myFriends.length; i++) {
+            if (myFriends[i] != null) {
+                if (myFriends[i].getName().equals(searchName)) {
+                    return myFriends[i] ;
+                }
+            }
+        }
+        return null ;
     }
 
     /**
@@ -69,8 +80,14 @@ class ContactsManager {
      */
     public Contact searchContactByEmail(String email) {
         //  Your code goes here....
-
-        return null;
+        for (int i = 0; i < myFriends.length; i++) {
+            if (myFriends[i] != null) {
+                if (myFriends[i].getEmail().equals(email)) {
+                    return myFriends[i] ;
+                }
+            }
+        }
+        return null ;
     }
 
     /**
@@ -82,11 +99,27 @@ class ContactsManager {
      */
     public boolean deleteContact(String searchName) {
         //  Your code goes here....
-
-        return false;
+        //int index = 0 ;
+        for (int i = 0; i < myFriends.length; i++) {
+            if (myFriends[i] != null) {
+                if (myFriends[i].getName().equals(searchName)) {
+                    myFriends[i] = null ;
+                    friendsCount-- ;
+                    return true ;
+                }
+            }
+            
+        }
+        return false ;  
     }
 
     // Any additional method that you want to implement by yourself.
-
+    public String toString() {
+        String str = "";
+        for (Contact friend : myFriends) {
+            str += friend.toString() + "\n" ;
+        }
+        return str ;
+    }
     //  Happy Coding... Have Fun.....
 }
