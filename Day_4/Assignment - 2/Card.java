@@ -37,8 +37,8 @@ public class Card {
     }
 
     public String toString() {
-        String output = "{ Name = " + this.titleOfTheBook + "," + " Author = "
-        + this.authorOfTheBook + "," + " Subject = " + this.subjectOfTheBook + " }";
+        String output = "Name = " + this.titleOfTheBook + "," + " Author = "
+        + this.authorOfTheBook + "," + " Subject = " + this.subjectOfTheBook ;
         return output;
     }
 }
