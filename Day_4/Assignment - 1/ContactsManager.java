@@ -37,11 +37,11 @@ class ContactsManager {
      * 1. Initializes the friendsCount to 0 as there no contacts in the list.
      * 2. myFriends with array initial size of 500
      */
-    Contact [] myFriends ;
-    int friendsCount ;
+    Contact [] myFriends;
+    int friendsCount;
     public ContactsManager() {
-        this.myFriends = new Contact[500] ;
-        this.friendsCount = 0 ;
+        this.myFriends = new Contact[500];
+        this.friendsCount = 0;
     }
     /**
      * The addContact method takes in a parameter of type contact object and 
@@ -65,11 +65,11 @@ class ContactsManager {
         for (int i = 0; i < myFriends.length; i++) {
             if (myFriends[i] != null) {
                 if (myFriends[i].getName().equals(searchName)) {
-                    return myFriends[i] ;
+                    return myFriends[i];
                 }
             }
         }
-        return null ;
+        return null;
     }
 
     /**
@@ -83,11 +83,11 @@ class ContactsManager {
         for (int i = 0; i < myFriends.length; i++) {
             if (myFriends[i] != null) {
                 if (myFriends[i].getEmail().equals(email)) {
-                    return myFriends[i] ;
+                    return myFriends[i];
                 }
             }
         }
-        return null ;
+        return null;
     }
 
     /**
@@ -103,23 +103,23 @@ class ContactsManager {
         for (int i = 0; i < myFriends.length; i++) {
             if (myFriends[i] != null) {
                 if (myFriends[i].getName().equals(searchName)) {
-                    myFriends[i] = null ;
-                    friendsCount-- ;
-                    return true ;
+                    myFriends[i] = null;
+                    friendsCount--;
+                    return true;
                 }
             }
             
         }
-        return false ;  
+        return false;  
     }
 
     // Any additional method that you want to implement by yourself.
     public String toString() {
         String str = "";
         for (Contact friend : myFriends) {
-            str += friend.toString() + "\n" ;
+            str += friend.toString() + "\n";
         }
-        return str ;
+        return str;
     }
     //  Happy Coding... Have Fun.....
 }
