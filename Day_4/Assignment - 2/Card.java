@@ -6,6 +6,7 @@ public class Card {
     public Card() {
 
     }
+    
     public Card(final String titleOfTheBook, final String authorOftheBook, final String subjectOfTheBook) {
         this.titleOfTheBook = titleOfTheBook;
         this.authorOfTheBook = authorOftheBook;
