@@ -70,10 +70,10 @@ public class CardCatalog {
         thirdCard.setTitleOfTheBook("A Brief History of Time");
         thirdCard.setSubjectOfTheBook("Science");
 
-        CardCatalog aCard = new CardCatalog();
-        aCard.addCard(firstCard);
-        aCard.addCard(secondCard);
-        aCard.addCard(thirdCard);
-        aCard.printCatalog();
+        CardCatalog addCard = new CardCatalog();
+        addCard.addCard(firstCard);
+        addCard.addCard(secondCard);
+        addCard.addCard(thirdCard);
+        addCard.printCatalog();
     }
 }
