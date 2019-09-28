@@ -11,7 +11,8 @@ public class Test {
     //    b = b-- ;
     //    a = a++ ;
     //    System.out.println(a + " " + b) ;
-    int [] arr = new int[5] ;
-    System.out.println(arr) ;
+    int arr [][] = new int[4][];
+    
+    System.out.println(arr[3]) ;
     }
 }
