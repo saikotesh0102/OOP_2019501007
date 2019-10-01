@@ -77,7 +77,6 @@ public class List {
         // How many items do we have in the list when you create it?
         // An empty list has how many items?
         // That is the initial value to use for size.
-        
     }
 
     /*
@@ -112,7 +111,14 @@ public class List {
      */
     public void add(int item) {
         //Inserts the specified element at the end of the list.
-        
+        if (size >= list.length) {
+            reSize();
+        }
+        list[size++] = item;
+    }
+
+    public void reSize(){
+        list = Arrays.copyOf(list, 2 * size);
     }
 
     /*
@@ -157,7 +163,7 @@ public class List {
      * The method returns an int. Empty list should return 0.
      */
     public int size() {
-        
+        return size ;  
     }
 
     /*
@@ -184,7 +190,12 @@ public class List {
     public void remove(int index) {
         // write the logic for remove here.
         // Think about what to do to the size variable.
-        
+        if (index > 0 && index < size) {
+            for(int i = index; i < size-1;i++) {
+                list[i] = list[i+1];
+            }
+            size--;
+        } 
     }
 
     /*
@@ -199,7 +210,10 @@ public class List {
      * number of items in the list? Would size variable be useful?
      */
     public int get(int index) {
-
+        if (index > 0 && index < size) {
+            return list[index];
+        }
+        return -1;
     }
 
     /*
@@ -241,7 +255,7 @@ public class List {
      * the item exists and otherwise false
      */
     public boolean contains(int item) {
-        
+        return indexOf(item) != -1;
     }
 
     /*
@@ -250,7 +264,11 @@ public class List {
      * or -1 if this list does not contain the element.
      */
     public int indexOf(int item) {
-        
+        for(int i = 0; i < size-1; i++) {
+            if(item == list[i])
+                return i;
+        }
+        return -1;
     }
 
 	public static void main(String[] args) {

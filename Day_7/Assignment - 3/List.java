@@ -12,6 +12,7 @@
 
 import java.io.BufferedInputStream;
 import java.util.Scanner;
+import java.util.* ;
 
 public class List {
     //Implement all the methods mentioned to build a ListADT
@@ -43,6 +44,7 @@ public class List {
     // that's the job of the List constructor
 
     //  Your code goes here.....
+    private int[] list ;
 
     /*
      * What are the other class variables needed for creating a list?
@@ -67,12 +69,13 @@ public class List {
     // declare a private int size
     // again, don't initialize it here
     // variable initialization should be done in the constructor
+    private int size ;
 
     /*
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    public List() {
+    public List(int capacity ) {
 
         // what are the two variables to be initialized here?
         // think about the private variables described above.
@@ -86,6 +89,8 @@ public class List {
         // That is the initial value to use for size.
 
         //  Your code goes here.....
+        size = 0;
+        list = new int[capacity];
     }
     
     /*
@@ -102,6 +107,7 @@ public class List {
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         //  Your code goes here.....
+        
     }
 
     /*
