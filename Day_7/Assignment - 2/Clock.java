@@ -31,7 +31,7 @@ public class Clock {
 
     // Returns a string representation of this clock, using the format HH:MM.
     public String toString() {
-        String str="";
+        String str = "";
         System.out.println(h);
         if(h < 10){
             str = str + "0" + h;
