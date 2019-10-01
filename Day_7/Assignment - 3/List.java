@@ -75,7 +75,7 @@ public class List {
      * The purpose of the constructor is to initialize the
      * class variables with some default values.
      */
-    public List(int capacity ) {
+    public List() {
 
         // what are the two variables to be initialized here?
         // think about the private variables described above.
@@ -89,8 +89,8 @@ public class List {
         // That is the initial value to use for size.
 
         //  Your code goes here.....
+        list = new int[10];
         size = 0;
-        list = new int[capacity];
     }
     
     /*
@@ -107,7 +107,8 @@ public class List {
     public void add(int item) {
         //Inserts the specified element at the end of the list.
         //  Your code goes here.....
-        
+        list[size++] = item;
+       
     }
 
     /*
@@ -120,6 +121,7 @@ public class List {
     public int size() {
         // replace the code below to implement the size method
         //  Your code goes here.....
+        return size ;
     }
 
     /*
@@ -146,6 +148,12 @@ public class List {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         // Your code goes here.....
+        if (index > 0 && index < size) {
+            for(int i = index; i < size-1;i++) {
+                list[i] = list[i+1];
+            }
+            size--;
+        }
     }
 
     /*
@@ -162,6 +170,10 @@ public class List {
     public int get(int index) {
         // Replace the code below to write the code for get
         // Your code goes here.....
+        if (index > 0 && index < size) {
+            return list[index];
+        }
+        return -1;
     }
 
     /*
@@ -185,7 +197,16 @@ public class List {
      *
      */
     public String toString() {
-        // Your code goes here.....
+        // Your code goes here....
+        if(size == 0)
+            return "";
+        String str = "[";
+        int i = 0;
+        for(i = 0; i < size - 1; i++) {
+            str = str + list[i] + ",";
+        }
+        str = str + list[i] + "]";
+        return str;
     } 
     
     /*
@@ -196,6 +217,7 @@ public class List {
      */
     public boolean contains(int item) {
         // Your code goes here.....
+        return indexOf(item) != -1;
     }
 
     /*
@@ -205,6 +227,11 @@ public class List {
      */
     public int indexOf(int item) {
         // Your code goes here.....
+        for(int i = 0; i < size-1; i++) {
+            if(item == list[i])
+                return i;
+        }
+        return -1;
     }
 
     /**
