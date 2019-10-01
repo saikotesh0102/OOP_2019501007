@@ -49,13 +49,13 @@ public class TestJUnit {
       clock.toc(119);
       assertEquals("5. ", "04:59", clock.toString());
       clock.tic();
-      assertEquals"6. ", ("05:00", clock.toString());
+      assertEquals("6. ", "05:00", clock.toString());
       clock.toc(12000);
       assertEquals("7. ", "13:00", clock.toString());
       clock.toc(661);
-      assertEquals"8. ", ("00:01", clock.toString());
+      assertEquals("8. ", "00:01", clock.toString());
       clock.toc(-100);
-      assertEquals"9. ", ("00:01", clock.toString());
+      assertEquals("9. ", "00:01", clock.toString());
    }
 
    @Test

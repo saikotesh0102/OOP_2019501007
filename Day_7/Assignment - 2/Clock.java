@@ -15,24 +15,45 @@ public class Clock {
      * @param h
      * @param m
      */
+    int h;
+    int m;
     public Clock(int h, int m) {
-
+        this.h = h;
+        this.m = m;
     }
 
     // Creates a clock whose initial time is specified as a string, using the format HH:MM.
 
     public Clock(String s) {
-
+        this.h=Integer.parseInt(s.substring(0,2));
+        this.m=Integer.parseInt(s.substring(3,5));
     }
 
     // Returns a string representation of this clock, using the format HH:MM.
     public String toString() {
-
+        String str1="";
+        System.out.println(h);
+        if(h<10){
+            str1=str1+"0"+h;
+        }else{
+            str1=str1+h;
+        }   
+        str1=str1+":";
+        System.out.println(m);
+        if(m<10){
+            str1=str1+"0"+m;
+        }else{
+            str1=str1+m;
+        }
+        return str1;
     }
 
     // Is the time on this clock earlier than the time on that one?
     public boolean isEarlierThan(Clock that) {
-        
+        if(this.h <= that.h && this.m < that.m){
+            return true;
+        }
+        return false; 
     }
 
     private void check() {
@@ -41,12 +62,36 @@ public class Clock {
 
     // Adds 1 minute to the time on this clock.
     public void tic() {
-        
+        if(h < 23 && m < 59){
+            m=m+1;
+        }else if (h < 23 && m == 59) {
+            h = h+1;
+            m = 0;
+        }else if(h == 23 && m == 59) {
+            h = 0;
+            m = 0;
+        }
     }
 
     // Adds Δ min to the time on this clock.
     public void toc(int delta) {
-        
+        int num_hr = 0;
+        int minutes = 0;
+        if (delta > 60) {
+            num_hr = delta/60;
+            minutes = delta - (num_hr*60);
+            h = h + num_hr;
+            if (h >= 24) {
+                h = h % 24;
+            }
+            for(int i=0;i<minutes;i++){
+                this.tic();
+            }
+        }else {
+            for(int i=0;i<delta;i++){
+                this.tic();
+            }
+        }
     }
 
     // Test client (see below).
