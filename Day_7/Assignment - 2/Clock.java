@@ -25,27 +25,27 @@ public class Clock {
     // Creates a clock whose initial time is specified as a string, using the format HH:MM.
 
     public Clock(String s) {
-        this.h=Integer.parseInt(s.substring(0,2));
-        this.m=Integer.parseInt(s.substring(3,5));
+        this.h = Integer.parseInt(s.substring(0,2));
+        this.m = Integer.parseInt(s.substring(3,5));
     }
 
     // Returns a string representation of this clock, using the format HH:MM.
     public String toString() {
-        String str1="";
+        String str="";
         System.out.println(h);
-        if(h<10){
-            str1=str1+"0"+h;
+        if(h < 10){
+            str = str + "0" + h;
         }else{
-            str1=str1+h;
+            str = str + h;
         }   
-        str1=str1+":";
+        str = str + ":";
         System.out.println(m);
-        if(m<10){
-            str1=str1+"0"+m;
+        if(m < 10){
+            str = str + "0" + m;
         }else{
-            str1=str1+m;
+            str = str + m;
         }
-        return str1;
+        return str;
     }
 
     // Is the time on this clock earlier than the time on that one?
@@ -56,14 +56,10 @@ public class Clock {
         return false; 
     }
 
-    private void check() {
-        
-    }
-
     // Adds 1 minute to the time on this clock.
     public void tic() {
         if(h < 23 && m < 59){
-            m=m+1;
+            m = m + 1;
         }else if (h < 23 && m == 59) {
             h = h+1;
             m = 0;
@@ -84,11 +80,11 @@ public class Clock {
             if (h >= 24) {
                 h = h % 24;
             }
-            for(int i=0;i<minutes;i++){
+            for(int i = 0; i < minutes; i++){
                 this.tic();
             }
         }else {
-            for(int i=0;i<delta;i++){
+            for(int i = 0; i < delta; i++){
                 this.tic();
             }
         }
