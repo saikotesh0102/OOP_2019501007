@@ -42,12 +42,14 @@ public class TestJUnit {
       assertEquals("0. List Object", "0", "" + lst.size());
       lst.add(5);
       int[] arr = {1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9};
-      addAll(arr, lst);
+      for (int i = 0; i < arr.length; i++)
+         lst.add(arr[i]);
       assertEquals("1. List Object", "46", "" + lst.size());
 
       AbstractList lst1 = new List();
       lst1.add(6);
-      addAll(arr, lst1);
+      for (int i = 0; i < arr.length; i++)
+         lst1.add(arr[i]);
       assertEquals("2. List Object through abstract class", "46", "" + lst1.size());
 
       ListInterface lst2 = new List();
@@ -61,7 +63,8 @@ public class TestJUnit {
       List lst = new List();
       lst.add(5);
       int[] arr = {1,2,3,4,5,6};
-      addAll(arr, lst);
+      for (int i = 0; i < arr.length; i++)
+         lst.add(arr[i]);
       assertEquals("2. List Object through interface", "5", "" + lst.get(0));
       assertEquals("2. List Object through interface", "3", "" + lst.get(3));
       assertEquals("2. List Object through interface", "6", "" + lst.get(lst.size()-1));
@@ -72,7 +75,8 @@ public class TestJUnit {
       
       AbstractList lst1 = new List();
       lst1.add(6);
-      addAll(arr, lst1);
+      for (int i = 0; i < arr.length; i++)
+         lst1.add(arr[i]);
       assertEquals("2. List Object through interface", "6", "" + lst1.get(0));
       assertEquals("2. List Object through interface", "4", "" + lst1.get(4));
       assertEquals("2. List Object through interface", "6", "" + lst1.get(lst1.size()-1));
@@ -83,7 +87,8 @@ public class TestJUnit {
       
       ListInterface lst2 = new List();
       lst2.add(7);
-      addAll(arr, lst2);
+      for (int i = 0; i < arr.length; i++)
+         lst2.add(arr[i]);
       assertEquals("3. List Object through interface", "7", "" + lst2.get(0));
       assertEquals("3. List Object through interface", "6", "" + lst2.get(lst2.size()-1));
       assertEquals("3. List Object through interface", "-1", "" + lst2.get(lst2.size()));
@@ -99,21 +104,24 @@ public class TestJUnit {
       List lst = new List();
       lst.add(5);
       int[] arr = {1,2,3,4,5,6};
-      addAll(arr, lst);
+      for (int i = 0; i < arr.length; i++)
+         lst.add(arr[i]);
       assertEquals("1. List Object", "0", "" + lst.indexOf(5));
       assertEquals("1. List Object", "-1", "" + lst.indexOf(8));
       assertEquals("1. List Object", "-1", "" + lst.indexOf(-1));
       
       AbstractList lst1 = new List();
       lst1.add(6);
-      addAll(arr, lst1);
+      for (int i = 0; i < arr.length; i++)
+         lst1.add(arr[i]);
       assertEquals("2. List Object through abstract class", "4", "" + lst1.indexOf(4));
       assertEquals("2. List Object through abstract class", "-1", "" + lst1.indexOf(100));
       assertEquals("2. List Object through abstract class", "-1", "" + lst1.indexOf(-1));
       
       ListInterface lst2 = new List();
       lst2.add(7);
-      addAll(arr, lst2);
+      for (int i = 0; i < arr.length; i++)
+         lst2.add(arr[i]);
       assertEquals("3. List Object through interface", "6", "" + lst2.indexOf(6));
       assertEquals("3. List Object through interface", "-1", "" + lst2.indexOf(45));
       assertEquals("3. List Object through interface", "-1", "" + lst2.indexOf(-2));
@@ -126,21 +134,24 @@ public class TestJUnit {
       List lst = new List();
       lst.add(5);
       int[] arr = {1,2,3,4,5,6};
-      addAll(arr, lst);
+      for (int i = 0; i < arr.length; i++)
+         lst.add(arr[i]);
       assertEquals("1. List Object", "true", "" + lst.contains(5));
       assertEquals("1. List Object", "false", "" + lst.contains(8));
       assertEquals("1. List Object", "false", "" + lst.contains(-1));
       
       AbstractList lst1 = new List();
       lst1.add(6);
-      addAll(arr, lst1);
+      for (int i = 0; i < arr.length; i++)
+         lst1.add(arr[i]);
       assertEquals("2. List Object through abstract class", "true", "" + lst1.contains(4));
       assertEquals("2. List Object through abstract class", "false", "" + lst1.contains(100));
       assertEquals("2. List Object through abstract class", "false", "" + lst1.contains(-1));
       
       ListInterface lst2 = new List();
       lst2.add(7);
-      addAll(arr, lst2);
+      for (int i = 0; i < arr.length; i++)
+         lst2.add(arr[i]);
       assertEquals("3. List Object through interface", "true", "" + lst2.contains(3));
       assertEquals("3. List Object through interface", "false", "" + lst2.contains(45));
       assertEquals("3. List Object through interface", "false", "" + lst2.contains(-2));
