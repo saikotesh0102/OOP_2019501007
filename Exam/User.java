@@ -6,10 +6,26 @@ public class User {
     private String [] connectionsOfTheUser;
     private int numberOfConnections;
 
-    public User(String userName, int numberOfConnections){
+    // public User(){
+    //     this.userName = userName;
+    //     this.numberOfConnections = numberOfConnections;
+    // }
+
+    public User(String userName, String [] connectionsOfTheUser, int numberOfConnections){
         this.userName = userName;
-        this.numberOfConnections = numberOfConnections;
         this.connectionsOfTheUser = new String[10];
+        this.numberOfConnections = numberOfConnections;
+    }
+
+    public User(String userName, String [] connectionsOfTheUser){
+        this.userName = userName;
+        this.connectionsOfTheUser = new String[10];
+    }
+
+    public void add(String str){
+        if(numberOfConnections == connectionsOfTheUser.length){
+            connectionsOfTheUser = Arrays.copyOf(connectionsOfTheUser, connectionsOfTheUser.length + 10);
+        }
     }
 
     public void setUserName(final String userName) {
@@ -24,7 +40,7 @@ public class User {
         this.numberOfConnections = numberOfConnections;
     }
 
-    public String getNumberOfConnections() {
+    public int getNumberOfConnections() {
         return this.numberOfConnections;
     }
 
@@ -32,7 +48,25 @@ public class User {
         this.connectionsOfTheUser = connectionsOfTheUser;
     }
 
-    public String getConnectionsOfTheUser() {
+    public String[] getConnectionsOfTheUser() {
         return this.connectionsOfTheUser;
+    }
+
+    public String toString(){
+        if(connectionsOfTheUser != null){
+            String str = "[";
+            for(int i = 0; i < connectionsOfTheUser.length; i++){
+                str = str + connectionsOfTheUser[i] ;
+                if(i != connectionsOfTheUser.length-1){
+                    str += ", ";
+                }
+    
+            }
+            str += "]";
+            return userName + " : "+ str;
+        }else{
+            return userName + " : "+ "";
+        }
+       
     }
 }

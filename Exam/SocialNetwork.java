@@ -5,7 +5,7 @@
  * @author Siva Sankar
  */
 
-import java.util.Arrays;
+import java.util.*;
 
 public class SocialNetwork {
 
@@ -84,7 +84,7 @@ public class SocialNetwork {
     public void addUser(User userA) {
         // TODO
         // Your code goes here
-        if(size = users.length){
+        if(size == users.length){
             users = Arrays.copyOf(users,users.length + 10);
         }
 
@@ -151,11 +151,11 @@ public class SocialNetwork {
         // Your code goes here
         User [] connectionUsers = new User[20];
         int count = 20;
-        String[] connections ;
+        String[] connections = new String[10];
 
         for (int i = 0; i < size; i++){
             if (users[i].equals(userA)){
-                connections = users[i].setConnectionsOfTheUser();
+                connections = users[i].getConnectionsOfTheUser();
             }
         }
 
@@ -201,8 +201,8 @@ public class SocialNetwork {
         }
 
         if(flagA && flagB) {
-            String[] conA = userA.getConnections();
-            String[] conB = userB.getConnections();
+            String[] conA = userA.getConnectionsOfTheUser();
+            String[] conB = userB.getConnectionsOfTheUser();
             String[] common = new String[20];
             int commonSize = 0;
 
