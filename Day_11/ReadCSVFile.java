@@ -20,12 +20,12 @@ public class ReadCSVFile {
      *                 directory.
      * @return null if the file cannot be read.
      */
-    public static String[] readFile(String fileName) {
+    public static String[] readFile(String filename) {
 
         ArrayList<String> lines = new ArrayList<String>();
         Scanner scan = null;
         try {
-            scan = new Scanner(new File(fileName));
+            scan = new Scanner(new File(filename));
             while (scan.hasNext()) {
                 lines.add(scan.nextLine());
             }

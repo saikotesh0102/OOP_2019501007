@@ -1,5 +1,4 @@
 import java.util.*;
-// import java.io.BuffereedInputStream;
 
 public class CardCatalog {
     int index ;

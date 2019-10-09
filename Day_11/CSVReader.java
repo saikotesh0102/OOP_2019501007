@@ -7,7 +7,9 @@
  * @author Nemnous
  */
 
-import java.util.Arrays;
+import java.util.*;
+
+import javax.print.event.PrintJobListener;
 
 public class CSVReader {
     String[] dataFrame;
@@ -18,8 +20,8 @@ public class CSVReader {
      * 
      * @param fileName - name of the given csv file
      */
-    public void readCSV(String fileName) {
-        dataFrame = ReadCSVFile.readFile(fileName);
+    public void readCSV(String filename) {
+        dataFrame = ReadCSVFile.readFile(filename);
     }
 
     /**
@@ -31,7 +33,12 @@ public class CSVReader {
     public int rowCount() {
         // TODO
         // Your code goes here....
-        return -1;
+        int numberOfRows = rowCount();
+        if (numberOfRows > 0){
+            return numberOfRows;
+        }else{
+            return -1;
+        }
     }
 
     /**
@@ -41,8 +48,12 @@ public class CSVReader {
     public int fieldCount() {
         // TODO
         // Your code goes here....
-
-        return -1;
+        int numberOfColumns = fieldCount();
+        if (numberOfColumns > 0){
+            return numberOfColumns;
+        }else {
+            return -1;
+        }
     }
 
     /**
@@ -55,8 +66,11 @@ public class CSVReader {
     public String getFieldName(int index) {
         // TODO
         // Your code goes here....
-
-        return null;
+        if (index >= 0){
+            return getFieldName(index);
+        }else{
+            return null;
+        }
     }
 
 
@@ -72,8 +86,11 @@ public class CSVReader {
     public String[] getRow(int rowNumber) {
         // TODO
         // Your code goes here....
-
-        return null;
+        if (rowNumber > 0){
+            return getRow(rowNumber);
+        }else {
+            return null;
+        }
     }
 
     /**
@@ -88,8 +105,12 @@ public class CSVReader {
     public String[] getRows(int fromIndex, int toIndex) {
         // TODO
         // Your code goes here....
-
-        return rows;
+        // String [] str = new String(1);
+        if (fromIndex >= 0 && toIndex >= fromIndex){
+            return getRows(fromIndex, toIndex);
+        }else{
+            return null;
+        }
     }
 
     /**
@@ -101,7 +122,9 @@ public class CSVReader {
     public String[] getColumnValues(int index) {
         // TODO
         // Your code goes here....
-
+        if (index >= 0 ){
+            return getColumnValues(index);
+        }
         return null;
     }
 }
