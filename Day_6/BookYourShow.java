@@ -25,7 +25,22 @@ public class BookYourShow{
 
     public Show bookAShow(String name, String mobileNumber, String dateTime, int numberOfSeats){
         if (numberOfSeats <= seats.length){
-            
+        }
+    }
+
+    public void printTickets(){
+        for(int i = 0; i < shows.length; i++){
+            if(this.shows[i] != null){
+                System.out.println(shows[i]);
+            }
+        }
+    }
+
+    public void removeAMovie(String nameOfTheMovie){
+        for(int i = 0; i < shows.length; i++){
+            if(shows[i].nameOfTheMovie.equals(nameOfTheMovie)){
+                shows[i] = null;
+            }
         }
     }
 }

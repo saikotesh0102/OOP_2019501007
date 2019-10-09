@@ -117,10 +117,6 @@ public class List {
         list[size++] = item;
     }
 
-    public void reSize(){
-        list = Arrays.copyOf(list, 2 * size);
-    }
-
     /*
      *
      * Resize the list
@@ -139,7 +135,7 @@ public class List {
      * Use java.util.Arrays.copyOf(...) methods which returns a bigger array,
      * with the contents of the original array.
      *
-     * TODO
+     * To do
      * Create a method called resize(). Resize should create an new array that is
      * double the size of the old array.
      * Then copy the contents of the old array to the new one.
@@ -153,6 +149,9 @@ public class List {
      */
 
     // todo create resize method
+    public void reSize(){
+        list = Arrays.copyOf(list, 2 * size);
+    }
 
 
     /*
@@ -191,7 +190,7 @@ public class List {
         // write the logic for remove here.
         // Think about what to do to the size variable.
         if (index > 0 && index < size) {
-            for(int i = index; i < size-1;i++) {
+            for(int i = index; i < size-1; i++) {
                 list[i] = list[i+1];
             }
             size--;
@@ -265,8 +264,9 @@ public class List {
      */
     public int indexOf(int item) {
         for(int i = 0; i < size-1; i++) {
-            if(item == list[i])
+            if(item == list[i]){
                 return i;
+            }
         }
         return -1;
     }
