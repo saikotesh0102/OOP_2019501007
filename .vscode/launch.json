@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - One",
+            "request": "launch",
+            "mainClass": "One",
+            "projectName": "OOP_2019501007_58d9878e"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - CardCatalog",
             "request": "launch",
             "mainClass": "CardCatalog",
