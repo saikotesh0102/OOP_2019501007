@@ -2,8 +2,8 @@ public class Piece {
     Position position;
 
     public boolean isValidMove(Position newPosition) {
-        if(newPosition.row>0 && newPosition.column>0
-        && newPosition.row<8 && newPosition.column<8) {
+        if(newPosition.rowValue >= 0 && newPosition.columnValue >= 0
+        && newPosition.rowValue < 8 && newPosition.columnValue < 8) {
             return true;
         } else {
             return false;
