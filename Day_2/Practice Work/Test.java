@@ -1,18 +1,20 @@
 import java.lang.*;
+
 public class Test {
+    final public void show(){
+        System.out.println("Base Show");
+    }
+}
+
+public class Derived extends Test{
+    public void show(){
+        System.out.println("Derived Show");
+    }
+}
+
+public class One{
     public static void main(String[] args) {
-    //   int a = 10 ;
-    //    int b = a++ ;
-    //    System.out.println(a + " " + b) ;
-    //    a = b-- ;
-    //    System.out.println(a + " " + b) ;
-    //  a = b++ ;
-    //    System.out.println(a + " " + b) ;
-    //    b = b-- ;
-    //    a = a++ ;
-    //    System.out.println(a + " " + b) ;
-    int arr [][] = new int[4][];
-    
-    System.out.println(arr[3]) ;
+        Derived b = new Derived();
+        b.show(); 
     }
 }
