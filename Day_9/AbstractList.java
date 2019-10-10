@@ -3,8 +3,8 @@ import java.util.*;
 
 public class AbstractList implements ListInterface{
 
-    private int [] list;
-    private int size;
+    public int [] list;
+    public int size;
     
     public AbstractList(int capacity){
         size = 0;
@@ -15,15 +15,15 @@ public class AbstractList implements ListInterface{
         list = Arrays.copyOf(list, 2 * size);
     }
 
-    public booleanContains(int item){
-        // return indexOf(item) != -1;
-        for(int i = 0; i < list.length; i++){
-            if (arr[i] == item){
-                return true;
-            }else{
-                return false;
-            }
-        }
+    public boolean contains(int item){
+        return indexOf(item) != -1;
+        // for(int i = 0; i < list.length; i++){
+        //     if (arr[i] == item){
+        //         return true;
+        //     }else{
+        //         return false;
+        //     }
+        // }
     }
 
     public void remove(int index){
@@ -35,6 +35,17 @@ public class AbstractList implements ListInterface{
         }
     }
 
+    public int get(int index) {
+        if (index > 0 && index < list.length) {
+            return list[index];
+        }
+        return -1;
+    }
+
+    public int size(){
+        return size;
+    }
+
     public int indexOf(int item) {
         for(int i = 0; i < list.length; i++) {
             if(item == list[i]){
@@ -43,8 +54,16 @@ public class AbstractList implements ListInterface{
         }
         return -1;
     }
-
-    public int size(){
-        return size;
+    
+    public String toString() {
+        if(size == 0)
+            return "";
+        String str = "[";
+        int i = 0;
+        for(i = 0; i < size - 1; i++) {
+            str = str + list[i] + ",";
+        }
+        str = str + list[i] + "]";
+        return str;
     }
 }
