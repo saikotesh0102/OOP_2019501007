@@ -7,7 +7,7 @@ public class Task {
     private boolean important;
     private boolean urgent;
     
-    public void Task(final String name, final String status, final Date date, final boolean important, final boolean urgent) {
+    public Task(final String name, final String status, final Date date, final boolean important, final boolean urgent) {
         this.name = name;
         this.date = new Date();
         if (important) {

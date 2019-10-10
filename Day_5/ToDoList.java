@@ -5,7 +5,7 @@ public class ToDoList {
     public Task[] tasks;
     int index; 
 
-    public void ToDoList() {
+    public ToDoList() {
         tasks = new Task[10];
         index = 0;
     }
