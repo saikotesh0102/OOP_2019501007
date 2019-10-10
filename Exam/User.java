@@ -11,16 +11,15 @@ public class User {
     //     this.numberOfConnections = numberOfConnections;
     // }
 
-    public User(String userName, String [] connectionsOfTheUser, int numberOfConnections){
-        this.userName = userName;
-        this.connectionsOfTheUser = new String[10];
-        this.numberOfConnections = numberOfConnections;
-    }
-
     public User(String userName, String [] connectionsOfTheUser){
         this.userName = userName;
         this.connectionsOfTheUser = new String[10];
     }
+
+    // public User(String userName, String [] connectionsOfTheUser){
+    //     this.userName = userName;
+    //     this.connectionsOfTheUser = new String[10];
+    // }
 
     public void add(String str){
         if(numberOfConnections == connectionsOfTheUser.length){
@@ -52,21 +51,21 @@ public class User {
         return this.connectionsOfTheUser;
     }
 
-    public String toString(){
-        if(connectionsOfTheUser != null){
-            String str = "[";
-            for(int i = 0; i < connectionsOfTheUser.length; i++){
-                str = str + connectionsOfTheUser[i] ;
-                if(i != connectionsOfTheUser.length-1){
-                    str += ", ";
-                }
+    // public String toString(){
+    //     if(connectionsOfTheUser != null){
+    //         String str = "[";
+    //         for(int i = 0; i < connectionsOfTheUser.length; i++){
+    //             str = str + connectionsOfTheUser[i] ;
+    //             if(i != connectionsOfTheUser.length-1){
+    //                 str += ", ";
+    //             }
     
-            }
-            str += "]";
-            return userName + " : "+ str;
-        }else{
-            return userName + " : "+ "";
-        }
+    //         }
+    //         str += "]";
+    //         return userName + " : "+ str;
+    //     }else{
+    //         return userName + " : "+ "";
+    //     }
        
-    }
+    // }
 }
