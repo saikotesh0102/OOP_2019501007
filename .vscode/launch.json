@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Hangman",
+            "request": "launch",
+            "mainClass": "Hangman",
+            "projectName": "OOP_2019501007_58d9878e"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - One",
             "request": "launch",
             "mainClass": "One",
