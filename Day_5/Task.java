@@ -1,15 +1,15 @@
+import java.util.*;
+
 public class Task {
-    private String title;
-    private String assignedTo;
+    private String name;
     private String status;
-    private int timeToComplete;
+    private Date date;
     private boolean important;
     private boolean urgent;
     
-    public void Task(final String title, final String assignedTo, final String status, final int timeToComplete, final boolean important, final boolean urgent) {
-        this.title = title;
-        this.assignedTo = assignedTo;
-        this.timeToComplete = timeToComplete;
+    public void Task(final String name, final String status, final Date date, final boolean important, final boolean urgent) {
+        this.name = name;
+        this.date = new Date();
         if (important) {
             this.important = "Important";
         } else {
@@ -24,20 +24,12 @@ public class Task {
 
     }
 
-    public void setTitle(final String title){
-        this.title = title;
+    public void setName(final String name){
+        this.name = name;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setAssignedTo(final String assignedTo){
-        this.assignedTo = assignedTo;
-    }
-
-    public String getAssignedTo() {
-        return assignedTo;
+    public String getName() {
+        return name;
     }
 
     public void setStatus(final String status) {
@@ -48,12 +40,12 @@ public class Task {
         return status;
     }
 
-    public void setTimeToComplete(final int timeToComplete){
-        this.timeToComplete = timeToComplete;
+    public void setDate(final Date date){
+        this.Date = date;
     }
 
-    public int getTimeToComplete() {
-        return timeToComplete;
+    public int getDate() {
+        return date;
     }
 
     public void setImportant(final boolean Important){
@@ -81,7 +73,7 @@ public class Task {
     }
 
     public String toString() {
-        String str = this.title + ", " + this.assignedTo + ", " + this.timeToComplete + ", " + this.important + ", " + this.urgent + ", " + this.status;
+        String str = this.name + ", " + this.timeToComplete + ", " + this.important + ", " + this.urgent + ", " + this.status;
         return str;
     }
 }

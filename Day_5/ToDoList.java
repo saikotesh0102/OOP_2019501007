@@ -2,11 +2,11 @@ import java.util.*;
 
 public class ToDoList {
 
-    public ArrayList[] tasks;
+    public Task[] tasks;
     int index; 
 
     public void ToDoList() {
-        tasks = new ArrayList[10];
+        tasks = new Task[10];
         index = 0;
     }
 
@@ -15,14 +15,14 @@ public class ToDoList {
         index++;
     }
 
-    public String toString() {
-        String str = "";
-        for (Task t : tasks) {
-            Str += t;
-            Str += "\n";
-        }
-        return m;
-    }
+    // public String toString() {
+    //     String str = "";
+    //     for (Task t : tasks) {
+    //         Str += t;
+    //         Str += "\n";
+    //     }
+    //     return m;
+    // }
 
     public Task getNextTask(final String nextTask) {
         for (int i = 0; i < tasks.length; i++) {
@@ -80,13 +80,32 @@ public class ToDoList {
         int count = 0;
         for (int i = 0; i < tasks.length; i++) {
             if (tasks[i].getStatus().equals("todo")) {
-                count += tasks[i].getTimeToComplete();
+                count += tasks[i].getDate();
             }
         }
         return count;
     }
 
-    public static void main(String[] args) {
-        
-    }
+    // public static void main(String[] args) {
+    //     Task firstTask = new Task();
+    //     firstTask.setName() = ("Module 5 Assignment 1");
+    //     firstTask.setStatus() = ("InComplete");
+    //     firstTask.setDate() = 24/09/2019 ;
+
+    //     Task secondTask = new Task();
+    //     secondTask.setName() = ("Module 5 Assignment 1 Date Objects");
+    //     secondTask.setStatus() = ("InComplete");
+    //     secondTask.setDate() = 23/09/2019 ;
+
+    //     Task thirdTask = new Task();
+    //     thirdTask.setName() = ("Module 4 Assignment 1 Library Card Catalog");
+    //     thirdTask.setStatus() = ("InProcess");
+    //     thirdTask.setDate() = 23/09/2019 ;
+
+    //     ToDoList addTask = new ToDoList();
+    //     addTask.addTask(firstTask);
+    //     addTask.addTask(secondTask);
+    //     addTask.addTask(thirdTask);
+    //     addTask.printtasks();
+    // }
 }
