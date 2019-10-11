@@ -79,5 +79,10 @@ public class Hangman{
             System.out.println(defaultMovies[i]);
         }
         // System.out.println(defaultMovies.length);
+
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter an Integer : ");
+        int number = input.nextInt();
+        // System.out.println("You Entered " + number);
     }
 }
