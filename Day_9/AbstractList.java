@@ -47,14 +47,14 @@ public abstract class AbstractList implements ListInterface{
         return size;
     }
 
-    // public int indexOf(int item) {
-    //     for(int i = 0; i < list.length; i++) {
-    //         if(item == list[i]){
-    //             return i;
-    //         }
-    //     }
-    //     return -1;
-    // }
+    public int indexOf(int item) {
+        for(int i = 0; i < list.length; i++) {
+            if(item == list[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
     
     public String toString() {
         String str = "[";
