@@ -81,7 +81,7 @@ public class Hangman{
         // System.out.println(defaultMovies.length);
 
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter an Integer : ");
+        System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter an Integer : ");
         int number = input.nextInt();
         // System.out.println("You Entered " + number);
     }
