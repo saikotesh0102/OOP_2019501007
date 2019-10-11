@@ -33,12 +33,10 @@ public class CSVReader {
     public int rowCount() {
         // TODO
         // Your code goes here....
-        int numberOfRows = rowCount();
-        if (numberOfRows > 0){
-            return numberOfRows;
-        }else{
-            return -1;
+        if(dataFrame.length != 0){
+            return dataFrame.length - 1;
         }
+        return -1;
     }
 
     /**
@@ -48,12 +46,10 @@ public class CSVReader {
     public int fieldCount() {
         // TODO
         // Your code goes here....
-        int numberOfColumns = fieldCount();
-        if (numberOfColumns > 0){
-            return numberOfColumns;
-        }else {
-            return -1;
+        if(dataFrame.length != 0){
+            return dataFrame[0].split(",").length;
         }
+        return -1;
     }
 
     /**
@@ -66,11 +62,12 @@ public class CSVReader {
     public String getFieldName(int index) {
         // TODO
         // Your code goes here....
-        if (index >= 0){
-            return getFieldName(index);
-        }else{
-            return null;
+        if(dataFrame.length != 0){
+            if(index <= dataFrame[0].split(",").length){
+                return dataFrame[0].split(",")[index-1];
+            }
         }
+        return null;
     }
 
 
@@ -86,13 +83,11 @@ public class CSVReader {
     public String[] getRow(int rowNumber) {
         // TODO
         // Your code goes here....
-        if (rowNumber > 0){
-            return getRow(rowNumber);
-        }else {
-            return null;
+        if(dataFrame.length != 0){
+            return dataFrame[rowNumber].split(",");
         }
+        return null;
     }
-
     /**
      * This method returns the rows (String array) based on fromIndex and toIndex.
      * The fromIndex and toIndex should be in the range of the dataset lengths.
@@ -106,11 +101,23 @@ public class CSVReader {
         // TODO
         // Your code goes here....
         // String [] str = new String(1);
-        if (fromIndex >= 0 && toIndex >= fromIndex){
-            return getRows(fromIndex, toIndex);
-        }else{
+        if(dataFrame.length != 0){
+            // String rows[] = new String[toIndex-fromIndex+1];
+            if(fromIndex >= 0 && toIndex >= 0 && toIndex > fromIndex){
+                if(fromIndex < dataFrame.length && toIndex <= dataFrame.length){
+                    String rows[] = new String[toIndex-fromIndex];
+                    int k = 0;
+                    for(int i = fromIndex;i < toIndex;i++){ 
+                        rows[k] = dataFrame[i];
+                        k++;
+                    }
+                    return rows;
+                }
+                return null;
+            }
             return null;
-        }
+        } 
+        return null; 
     }
 
     /**
@@ -122,8 +129,12 @@ public class CSVReader {
     public String[] getColumnValues(int index) {
         // TODO
         // Your code goes here....
-        if (index >= 0 ){
-            return getColumnValues(index);
+        if (index > 0 && index < dataFrame.length) {
+            String[] arr = new String[dataFrame.length];
+            for (int i = 1; i < dataFrame.length; i++) {
+                arr[i] = dataFrame[i].split(",")[index];
+            }
+            return arr;
         }
         return null;
     }
