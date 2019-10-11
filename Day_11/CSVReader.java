@@ -8,6 +8,7 @@
  */
 
 import java.util.*;
+import java.lang.*;
 
 import javax.print.event.PrintJobListener;
 
@@ -63,7 +64,7 @@ public class CSVReader {
         // TODO
         // Your code goes here....
         if(dataFrame.length != 0){
-            if(index <= dataFrame[0].split(",").length){
+            if(index > 0 && index <= dataFrame[0].split(",").length){
                 return dataFrame[0].split(",")[index-1];
             }
         }
@@ -83,8 +84,8 @@ public class CSVReader {
     public String[] getRow(int rowNumber) {
         // TODO
         // Your code goes here....
-        if(dataFrame.length != 0){
-            return dataFrame[rowNumber].split(",");
+        if (rowNumber > 0 && dataFrame.length != 0 && rowNumber < dataFrame.length){
+                return dataFrame[rowNumber].split(",");
         }
         return null;
     }
@@ -129,12 +130,15 @@ public class CSVReader {
     public String[] getColumnValues(int index) {
         // TODO
         // Your code goes here....
-        if (index > 0 ) {
-            String[] arr = new String[dataFrame.length];
-            for (int i = 1; i < dataFrame.length; i++) {
-                arr[i] = dataFrame[i].split(",")[index];
+        if(dataFrame.length != 0){
+            if(index < dataFrame[0].split(",").length){
+                String [] columnArray = new String[dataFrame.length - 1];
+                for(int i = 0; i < dataFrame.length - 1; i++){
+                    columnArray[i] = dataFrame[i+1].split(",")[index];
+                }
+                return columnArray;
             }
-            return arr;
+            return null;
         }
         return null;
     }
