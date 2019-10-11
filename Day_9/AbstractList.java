@@ -1,42 +1,43 @@
 import java.lang.*;
 import java.util.*;
 
-public class AbstractList implements ListInterface{
+public abstract class AbstractList implements ListInterface{
 
     public int [] list;
     public int size;
     
-    public AbstractList(int capacity){
+    public AbstractList(){
         size = 0;
-        list = new int [capacity];
+        list = new int [100];
     }
 
-    public void reSize(){
-        list = Arrays.copyOf(list, 2 * size);
-    }
+    // public void reSize(){
+    //     list = Arrays.copyOf(list, 2 * size);
+    // }
 
     public boolean contains(int item){
-        return indexOf(item) != -1;
-        // for(int i = 0; i < list.length; i++){
-        //     if (arr[i] == item){
-        //         return true;
-        //     }else{
-        //         return false;
-        //     }
-        // }
+        // return indexOf(item) != -1;
+        for(int i = 0; i < size; i++){
+            if (list[i] == item){
+                return true;
+            }
+        }
+        return false;
     }
 
     public void remove(int index){
-        if (index > 0 && index < list.length) {
-            for(int i = index; i < list.length; i++) {
+        if (index < size) {
+            int i;
+            for(i = index; i < size; i++) {
                 list[i] = list[i+1];
             }
+            list[i] = 0;
             size--;
         }
     }
 
     public int get(int index) {
-        if (index > 0 && index < list.length) {
+        if (index >= 0 && index < size) {
             return list[index];
         }
         return -1;
@@ -46,20 +47,18 @@ public class AbstractList implements ListInterface{
         return size;
     }
 
-    public int indexOf(int item) {
-        for(int i = 0; i < list.length; i++) {
-            if(item == list[i]){
-                return i;
-            }
-        }
-        return -1;
-    }
+    // public int indexOf(int item) {
+    //     for(int i = 0; i < list.length; i++) {
+    //         if(item == list[i]){
+    //             return i;
+    //         }
+    //     }
+    //     return -1;
+    // }
     
     public String toString() {
-        if(size == 0)
-            return "";
         String str = "[";
-        int i = 0;
+        int i;
         for(i = 0; i < size - 1; i++) {
             str = str + list[i] + ",";
         }

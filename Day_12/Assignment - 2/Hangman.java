@@ -32,9 +32,9 @@ public class Hangman{
             }
         }
         // System.out.println(strArray[strArray.length - 1]);
-        for(int i = 0; i < hardMovies.length; i++){
-            System.out.println(hardMovies[i]);
-        }
+        // for(int i = 0; i < hardMovies.length; i++){
+        //     System.out.println(hardMovies[i]);
+        // }
         // System.out.println(hardMovies.length);
 
         String [] mediumMovies = new String [7];
@@ -47,9 +47,9 @@ public class Hangman{
             }
         }
 
-        for(int i = 0; i < mediumMovies.length; i++){
-            System.out.println(mediumMovies[i]);
-        }
+        // for(int i = 0; i < mediumMovies.length; i++){
+        //     System.out.println(mediumMovies[i]);
+        // }
 
         String [] easyMovies = new String [8];
         int indexEasy = 0;
@@ -61,9 +61,9 @@ public class Hangman{
             }
         }
 
-        for(int i = 0; i < easyMovies.length; i++){
-            System.out.println(easyMovies[i]);
-        }
+        // for(int i = 0; i < easyMovies.length; i++){
+        //     System.out.println(easyMovies[i]);
+        // }
 
         String [] defaultMovies = new String [22];
         int indexDefault = 0;
@@ -75,14 +75,23 @@ public class Hangman{
             }
         }
 
-        for(int i = 0; i < defaultMovies.length; i++){
-            System.out.println(defaultMovies[i]);
-        }
+        // for(int i = 0; i < defaultMovies.length; i++){
+        //     System.out.println(defaultMovies[i]);
+        // }
         // System.out.println(defaultMovies.length);
 
-        Scanner input = new Scanner(System.in);
-        System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter an Integer : ");
-        int number = input.nextInt();
+        while(true){
+            Scanner input = new Scanner(System.in);
+            System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter Number : ");
+            String number = input.next();
+            // if (number != "1" || number != "2" || number != "3" || number != "4"){
+            if (number == "1" || number == "2" || number == "3" || number == "4"){
+                break;
+            }else{
+                System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
+            }
+        }
+
         // System.out.println("You Entered " + number);
     }
 }
