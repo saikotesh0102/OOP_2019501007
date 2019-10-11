@@ -40,7 +40,7 @@ public class CSVReader {
     }
 
     /**
-     * This method returns the count of coloumns in a data Frame.
+     * This method returns the count of columns in a data Frame.
      * @return the count of columns in the dataset and -1 otherwise.
      */
     public int fieldCount() {
@@ -129,7 +129,7 @@ public class CSVReader {
     public String[] getColumnValues(int index) {
         // TODO
         // Your code goes here....
-        if (index > 0 && index < dataFrame.length) {
+        if (index > 0 ) {
             String[] arr = new String[dataFrame.length];
             for (int i = 1; i < dataFrame.length; i++) {
                 arr[i] = dataFrame[i].split(",")[index];
