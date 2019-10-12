@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * 
  */
@@ -18,6 +20,11 @@ public class OrderedList extends AbstractList {
         //Inserts the specified element at the end of the list.
         // TODO
         // Your code goes here....
+        if (size >= list.length) {
+            resize();
+        }
+        list[size++] = item;
+        Arrays.sort(list);
     }
 
     public int rank(int item) {

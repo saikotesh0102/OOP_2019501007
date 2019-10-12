@@ -178,7 +178,11 @@ public abstract class AbstractList implements ListInterface  {
     public void addAll(List lst) {
         // TODO
         // Your code goes here.
-        
+        resize();
+        int index = size;
+        for(int i = 0; i < lst.length; i++){
+            list[index++] = this.lst[i];
+        }
     }
 
     /**
