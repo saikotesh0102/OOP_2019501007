@@ -7,7 +7,7 @@ public final class TestTasks {
     
         Task t1 = new Task("Task1 Assignment-1 27/09/2019 pending");
         Task t2 = new Task("Task2 Assignment-2 24/09/2019 incomplete");
-        Task t3 = new Task("Task3 Assignment-3 29/09/2019 incomplete");
+        Task t3 = new Task("Task3 Assignment-3 29/09/2019 inprocess");
     
         obj.addTask(t1);
         obj.addTask(t2);

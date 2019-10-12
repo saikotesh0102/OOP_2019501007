@@ -54,6 +54,6 @@ public  class Task {
     }
 
     public String toString() {
-        return "{ Task Name = " + this.taskName + ", Description = " + this.taskDescription + ", Due Date = " + formatter.format(date) + ", status = " + this.status + " }";
+        return "{ Task Name = " + this.taskName + ", Task Description = " + this.taskDescription + ", Due Date = " + formatter.format(date) + ", status = " + this.status + " }";
     }
 }
