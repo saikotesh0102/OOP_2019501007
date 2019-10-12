@@ -26,4 +26,8 @@ public class Patron{
     public String getMobileNumber() {
         return mobileNumber;
     }
+
+    public String toString() {
+        return "Patron [Mobile Number= " + mobileNumber + ", Name = " + name + "]";
+    }
 }
