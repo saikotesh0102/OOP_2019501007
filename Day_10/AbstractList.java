@@ -11,7 +11,9 @@
  * @since August - 2018
  */
 
-import java.util.Arrays;
+import java.util.*;
+import java.util.List;
+import java.lang.*;
 
 public abstract class AbstractList implements ListInterface  {
     // Implement all the methods mentioned to build a ListADT and 
@@ -124,7 +126,10 @@ public abstract class AbstractList implements ListInterface  {
         //Inserts the specified element at the end of the list.
         // TODO
         // Your code goes here.
-        
+        if (size >= list.length) {
+            resize();
+        }
+        list[size++] = item;
     }
 
     /**
@@ -152,7 +157,15 @@ public abstract class AbstractList implements ListInterface  {
     public final void add(int index, int item) {
         // TODO
         // Your code goes here.
-        
+        if(index > 0 && index > size){
+            resize();
+            list[size] = item;
+        }else if(index > 0 && index < size){
+            for (int i = size; i > index; i--){
+                list[i] = list[i-1];
+            }
+            list[index] = item;
+        }
     }
 
     /**
@@ -176,7 +189,18 @@ public abstract class AbstractList implements ListInterface  {
     public void addAll(int[] arr ){
         // TODO
         // Your code goes here.
-        
+        if((list.length - size) < arr.length){
+            resize();
+            int index = size;
+            for(int i = 0; i < arr.length; i++){
+                list[index++] = arr[i];
+            }
+        }else{
+            int index = size;
+            for(int i = 0; i < arr.length; i++){
+                list[index++] = arr[i];
+            }
+        }
     }
 
     /*
@@ -190,8 +214,7 @@ public abstract class AbstractList implements ListInterface  {
         // replace the code below to implement the size method
         // TODO
         // Your code goes here.
-        
-        return -1;
+        return size;
     }
 
     /**
@@ -200,7 +223,7 @@ public abstract class AbstractList implements ListInterface  {
     public void resize() {
         // TODO
         // Your code goes here.
-        
+        list = Arrays.copyOf(list, 2 * size);
     }
 
     /*
@@ -228,7 +251,14 @@ public abstract class AbstractList implements ListInterface  {
         // Think about what to do to the size variable.
         // TODO
         // Your code goes here.
-        
+        if (index < size) {
+            int i;
+            for(i = index; i < size; i++) {
+                list[i] = list[i+1];
+            }
+            list[i] = 0;
+            size--;
+        }
     }
 
     /*
@@ -246,7 +276,9 @@ public abstract class AbstractList implements ListInterface  {
         // Replace the code below to write the code for get
         // TODO
         // Your code goes here.
-        
+        if (index >= 0 && index < size) {
+            return list[index];
+        }
         return -1;
     }
 
@@ -290,7 +322,11 @@ public abstract class AbstractList implements ListInterface  {
     public boolean contains(int item) {
         // TODO
         // Your code goes here.
-        
+        for(int i = 0; i < size; i++){
+            if (list[i] == item){
+                return true;
+            }
+        }
         return false;
     }
 
@@ -301,7 +337,11 @@ public abstract class AbstractList implements ListInterface  {
     public int indexOf(int item) {
         // TODO
         // Your code goes here.
-
+        for(int i = 0; i < size; i++) {
+            if(item == list[i]){
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -316,7 +356,11 @@ public abstract class AbstractList implements ListInterface  {
     public int lastIndexOf(int item) {
         // TODO
         // Your code goes here.
-        
+        for(int i = size ; i >= 0; i--){
+            if (list[i] == item){
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -328,8 +372,13 @@ public abstract class AbstractList implements ListInterface  {
     public int count(int item) {
         // TODO
         // Your code goes here.
-        
-        return 0;
+        int count = 0;
+        for (int i = 0; i < size; i++){
+            if(list[i] == item){
+                count++;
+            }
+        }
+        return count;
     } 
 
     /**
@@ -345,8 +394,15 @@ public abstract class AbstractList implements ListInterface  {
     public List subList(int fromIndex, int toIndex) {
         // TODO
         // Your code goes here.
-        
-        return null;
+        List [] subList = new List[toIndex - fromIndex + 1];
+        int index = 0;
+        if (fromIndex >= 0 && fromIndex < toIndex){
+            for (int i = fromIndex; i <= toIndex; i++){
+                subList[index] = list[i];
+                index++;
+            }
+            return subList;
+        }
     }
 
     /**
@@ -359,5 +415,8 @@ public abstract class AbstractList implements ListInterface  {
     public void set(int index, int item) {
         // TODO
         // Your code goes here.
+        if(index >= 0){
+            list[index] = item;
+        }
     }
 }
