@@ -104,11 +104,11 @@ public class Show {
         if (booked) {
             System.out.println(ticketHolderDetails[index]);
         } else {
-            System.out.println("So, far " + user.getName() + " has not booked any tickets");
+            System.out.println(user.getName() + " has not booked any tickets");
         }
     }
 
     public String toString() {
-        return "Show [Movie Name = " + nameOfTheMovie + ", DateTime = " + dateTime + "]";
+        return "Show [Movie Name = " + nameOfTheMovie + ", Date and Time = " + dateTime + "]";
     }
 }

@@ -20,22 +20,22 @@ public class BookYourShow{
             resize();
         }
         shows[index] = show;
-        binarySort(shows);
+        // binarySort(shows);
         index++;
     }
 
-    public void binarySort(final Show[] arr) {
-        for (int i = 0; i < index; ++i) {
-            for (int j = i + 1; j < index + 1; ++j) {
-                if (shows[i].getNameOfTheMovie().compareTo(shows[j].getNameOfTheMovie()) > 0) {
-                    // swap shows[i] with shows[j]
-                    Show temp = shows[i];
-                    shows[i] = shows[j];
-                    shows[j] = temp;
-                }
-            }
-        }
-    }
+    // public void binarySort(final Show[] arr) {
+    //     for (int i = 0; i < index; ++i) {
+    //         for (int j = i + 1; j < index + 1; ++j) {
+    //             if (shows[i].getNameOfTheMovie().compareTo(shows[j].getNameOfTheMovie()) > 0) {
+    //                 // swap shows[i] with shows[j]
+    //                 Show temp = shows[i];
+    //                 shows[i] = shows[j];
+    //                 shows[j] = temp;
+    //             }
+    //         }
+    //     }
+    // }
 
     public Show getAShow(String nameOfTheMovie, String dateTime){
         for(int i = 0; i < shows.length; i++) {
@@ -45,24 +45,13 @@ public class BookYourShow{
         }return null;
     }
 
-    // public Show bookAShow(String name, String mobileNumber, String dateTime, int numberOfSeats){
-    //     if (numberOfSeats <= seats.length){
-    //     }
-    // }
-
-    public void printShows() {
-        for (int i = 0; i < index; i++) {
-            System.out.println(shows[i]);
+    public void printTickets(){
+        for(int i = 0; i < shows.length; i++){
+            if(this.shows[i] != null){
+                System.out.println(shows[i]);
+            }
         }
     }
-
-    // public void printTickets(){
-    //     for(int i = 0; i < shows.length; i++){
-    //         if(this.shows[i] != null){
-    //             System.out.println(shows[i]);
-    //         }
-    //     }
-    // }
 
     public void removeAMovie(String nameOfTheMovie){
         for(int i = 0; i < shows.length; i++){
