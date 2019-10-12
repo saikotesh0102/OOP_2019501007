@@ -1,35 +1,48 @@
 import java.util.*;
+import java.text.*;
 
-public class Task {
-    private String name;
-    private String status;
+public  class Task {
+
+    private String taskName;
+    private String taskDescription;
     private Date date;
-    private boolean important;
-    private boolean urgent;
-    
-    public Task(final String name, final String status, final Date date, final boolean important, final boolean urgent) {
-        this.name = name;
-        this.date = new Date();
-        if (important) {
-            this.important = "Important";
-        } else {
-            this.important = "Not Important";
-        }
-        if (urgent) {
-            this.urgent = "Urgent";
-        } else {
-            this.urgent = "Not Urgent";
-        }
-        this.status = status;
+    private String status;
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+
+    public Task() {
 
     }
 
-    public void setName(final String name){
-        this.name = name;
+    public Task(final String str) throws ParseException {
+        final String[] arr = str.split("\\s+");
+        this.taskName = arr[0];
+        this.taskDescription = arr[1];
+        this.date = formatter.parse(arr[2]);
+        this.status = arr[3];
     }
 
-    public String getName() {
-        return name;
+    public void setTaskName(final String taskName) {
+        this.taskName = taskName;
+    }
+
+    public String getTaskName() {
+        return taskName;
+    }
+
+    public void setTaskDescription(final String taskDescription) {
+        this.taskDescription = taskDescription;
+    }
+
+    public String getTaskDescription() {
+        return taskDescription;
+    }
+
+    public void setDate(final Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
     }
 
     public void setStatus(final String status) {
@@ -40,40 +53,7 @@ public class Task {
         return status;
     }
 
-    public void setDate(final Date date){
-        this.Date = date;
-    }
-
-    public int getDate() {
-        return date;
-    }
-
-    public void setImportant(final boolean Important){
-        if (important) {
-            this.important = "Important";
-        } else {
-            this.important = "Not Important";
-        }
-    }
-
-    public String getImportant() {
-        return important;
-    }
-
-    public void setUrgent(final boolean urgent){
-        if (urgent) {
-            this.urgent = "Urgent";
-        } else {
-            this.urgent = "Not Urgent";
-        }
-    }
-
-    public String getUrgent() {
-        return urgent;
-    }
-
     public String toString() {
-        String str = this.name + ", " + this.timeToComplete + ", " + this.important + ", " + this.urgent + ", " + this.status;
-        return str;
+        return "{ Task Name = " + this.taskName + ", Description = " + this.taskDescription + ", Due Date = " + formatter.format(date) + ", status = " + this.status + " }";
     }
 }
