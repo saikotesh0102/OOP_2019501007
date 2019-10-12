@@ -104,7 +104,7 @@ public class Show {
         if (booked) {
             System.out.println(ticketHolderDetails[index]);
         } else {
-            System.out.println("So, far " + user.getName() + " not booked any tickets");
+            System.out.println("So, far " + user.getName() + " has not booked any tickets");
         }
     }
 
