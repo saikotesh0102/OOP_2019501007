@@ -238,7 +238,6 @@ public abstract class AbstractList implements ListInterface  {
         // TODO
         // your code goes here
         
-        return -1;
     }
 
     /*
