@@ -14,7 +14,7 @@ public  class Task {
     }
 
     public Task(final String str) throws ParseException {
-        final String[] arr = str.split("\\s+");
+        final String[] arr = str.split(" ");
         this.taskName = arr[0];
         this.taskDescription = arr[1];
         this.date = formatter.parse(arr[2]);
