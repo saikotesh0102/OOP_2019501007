@@ -1,12 +1,33 @@
 public class Piece {
-    Position position;
+    
+    private Position position;
 
-    public boolean isValidMove(Position newPosition) {
-        if(newPosition.rowValue > 0 && newPosition.columnValue > 0
-        && newPosition.rowValue < 8 && newPosition.columnValue < 8) {
+    public boolean isValidMove(final Position newPosition) {
+        final int rowStart = 0;
+        final int rowEnd = 8;
+        final int colStart = 0;
+        final int colEnd = 8;
+
+        if (newPosition.getRow() > rowStart && newPosition.getRow() < rowEnd
+        && newPosition.getCol() > colStart && newPosition.getCol() < colEnd) {
             return true;
-        } else {
-            return false;
+        }
+        return false;
+    }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public void setPosition(final Position pos1) {
+        this.position = position;
+    }
+
+    public final void move(final Position position) {
+        if (isValidMove(position)) {
+            setPosition(position);
+
         }
     }
+
 }

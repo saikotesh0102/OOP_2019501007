@@ -1,28 +1,27 @@
-import java.lang.*;
-
 public class Position {
-    public int rowValue;
-    public int columnValue;
-
-    // Constructor using row and column values
-    public Position(final int rowValue, final int columnValue) {
-        this.rowValue = rowValue;
-        this.columnValue = columnValue;
+    
+    private int row;
+    private int col;
+    
+    public Position(final int rowPosition, final int colPosition) {
+        this.row = rowPosition;
+        this.col = colPosition;
+    }
+    
+    public void setRow(final int row) {
+        this.row = row;
     }
 
-    // public void setRowValue(final int rowValue) {
-    //     this.rowValue = rowValue;
-    // }
+    public int getRow() {
+        return row;
+    }
 
-    // public int getRowValue() {
-    //     retutn rowValue;
-    // }
+    public void setCol(final int col) {
+        this.col = col;
+    }
 
-    // public void setColumnValue(final int columnValue) {
-    //     this.columnValue = columnValue;
-    // }
+    public int getCol() {
+        return col;
+    }
 
-    // public int getColumnValue() {
-    //     retutn columnValue;
-    // }
 }
