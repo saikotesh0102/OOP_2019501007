@@ -3,7 +3,7 @@ import java.util.*;
 
 public class User {
     private String userName;
-    private String [] connectionsOfTheUser;
+    private User [] connectionsOfTheUser;
     private int numberOfConnections;
 
     // public User(){
@@ -13,7 +13,7 @@ public class User {
 
     public User(String userName, String [] connectionsOfTheUser){
         this.userName = userName;
-        this.connectionsOfTheUser = new String[10];
+        this.connectionsOfTheUser = new User[10];
     }
 
     // public User(String userName, String [] connectionsOfTheUser){
@@ -43,11 +43,11 @@ public class User {
         return this.numberOfConnections;
     }
 
-    public void setConnectionsOfTheUser(final String [] connectionsOfTheUser) {
+    public void setConnectionsOfTheUser(final User [] connectionsOfTheUser) {
         this.connectionsOfTheUser = connectionsOfTheUser;
     }
 
-    public String[] getConnectionsOfTheUser() {
+    public User[] getConnectionsOfTheUser() {
         return this.connectionsOfTheUser;
     }
 
