@@ -1,9 +1,5 @@
 import java.util.Arrays;
 
-/**
- * 
- */
-
 public class OrderedList extends AbstractList {
     /*
      * The add method does what the name suggests.

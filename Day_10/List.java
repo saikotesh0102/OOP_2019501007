@@ -1,7 +1,3 @@
-/**
- *
- */
-
 public class List extends AbstractList {
     
     public final void add(int index, int item) {
