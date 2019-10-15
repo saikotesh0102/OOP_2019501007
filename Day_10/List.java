@@ -1,43 +1,58 @@
+import java.util.*;
+
 public class List extends AbstractList {
-    
-    public final void add(int index, int item) {
+
+    /**
+     * add item to the list.
+     * @param item element to be added
+     */
+
+    public void add(final int item) {
+        if (size == list.length) {
+            resize();
+        }
+        this.list[size] = item;
+        this.size++;
+    }
+    /**
+     * adds a item at the specified position.
+     * @param index index position
+     * @param item element to be added
+     */
+    public void add(final int index, final int item) {
         // TODO
         // Your code goes here.
-        if(index > 0 && index > size){
-            resize();
-            list[size] = item;
-        }else if(index > 0 && index < size){
-            for (int i = size; i > index; i--){
-                list[i] = list[i-1];
+        int[] temp = Arrays.copyOf(list, size + 1);
+        // temp = list;
+        int index1 = index;
+        if (index1 <= size && index1 >= 0) {
+            temp[index1] = item;
+            for (int j = index1 + 1; j <= size; j++) {
+                temp[j] = list[index1];
+                index1 += 1;
             }
-            list[index] = item;
+        list = temp;
+        temp = null;
+        size++;
         }
+
     }
 
-    public void addAll(List lst) {
-        // TODO
-        // Your code goes here.
-        resize();
-        int index = size;
-        for(int i = 0; i < lst.length; i++){
-            list[index++] = this.lst[i];
-        }
-    }
-
-    public void addAll(int[] arr ){
-        // TODO
-        // Your code goes here.
-        if((list.length - size) < arr.length){
-            resize();
-            int index = size;
-            for(int i = 0; i < arr.length; i++){
-                list[index++] = arr[i];
-            }
-        }else{
-            int index = size;
-            for(int i = 0; i < arr.length; i++){
-                list[index++] = arr[i];
-            }
-        }
+    /**
+     *
+     * @param args command line arguments
+     */
+    public static void main(final String[] args) {
+        List lst = new List();
+        List lstin = new List();
+        final int n1 = 1;
+        final int n2 = 2;
+        final int n3 = 3;
+        final int n4 = 4;
+        final int n5 = 5;
+        final int n6 = 6;
+        int[] arr = {n1, n2, n3, n4, n5, n6};
+        lstin.addAll(arr);
+        lst.addAll(lstin);
     }
 }
