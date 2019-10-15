@@ -104,35 +104,4 @@ public class OrderedList extends AbstractList {
         }
         return lo;
     }
-    
-    // public static void main(final String[] args) {
-    //     AbstractList list = new OrderedList();
-    //     final int num1 = 0;
-    //     final int num2 = 0;
-    //     list.add(num1, num2);
-    //     System.out.println(list);
-    //     final int num3 = 1;
-    //     list.add(num3);
-    //     System.out.println(list);
-    //     final int num4 = -1;
-    //     list.add(num4);
-    //     System.out.println(list);
-    //     final int num5 = 4;
-    //     list.add(num5);
-    //     System.out.println(list);
-    //     final int num6 = -2;
-    //     list.add(num6);
-    //     System.out.println(list);
-    //     final int num7 = 2;
-    //     final int num8 = 1;
-    //     list.add(num7, num8);
-    //     System.out.println(list);
-    //     final int num9 = 4;
-    //     list.add(num9);
-    //     System.out.println(list);
-    //     final int num10 = -2;
-    //     list.add(num10);
-    //     System.out.println(list);
-    // }
-
 }

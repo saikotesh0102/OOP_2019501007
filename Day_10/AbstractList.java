@@ -175,11 +175,11 @@ public abstract class AbstractList implements ListInterface  {
      *
      * @param lst list containing elements to be added to this list.
      */
-    public void addAll(final List lst) {
+    public void addAll(final List list) {
         // TODO
         // Your code goes here.
-        for (int index = 0; index < lst.size; index++) {
-            this.add(lst.list[index]);
+        for (int index = 0; index < list.size; index++) {
+            this.add(list.list[index]);
         }
 
     }
@@ -260,10 +260,10 @@ public abstract class AbstractList implements ListInterface  {
         // Your code goes here.
         int[] temp = list;
         if (index >= 0 && index < size) {
-            int dupIdx = index;
+            int idx = index;
             for (int j = index + 1; j < size; j++) {
-                    temp[dupIdx] = list[j];
-                    dupIdx++;
+                    temp[idx] = list[j];
+                    idx++;
                 }
 
             list = temp;
