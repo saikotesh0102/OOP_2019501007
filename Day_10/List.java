@@ -38,21 +38,18 @@ public class List extends AbstractList {
 
     }
 
-    /**
-     *
-     * @param args command line arguments
-     */
-    public static void main(final String[] args) {
-        List lst = new List();
-        List lstin = new List();
-        final int n1 = 1;
-        final int n2 = 2;
-        final int n3 = 3;
-        final int n4 = 4;
-        final int n5 = 5;
-        final int n6 = 6;
-        int[] arr = {n1, n2, n3, n4, n5, n6};
-        lstin.addAll(arr);
-        lst.addAll(lstin);
-    }
+    
+    // public static void main(final String[] args) {
+    //     List lst = new List();
+    //     List lstin = new List();
+    //     final int n1 = 1;
+    //     final int n2 = 2;
+    //     final int n3 = 3;
+    //     final int n4 = 4;
+    //     final int n5 = 5;
+    //     final int n6 = 6;
+    //     int[] arr = {n1, n2, n3, n4, n5, n6};
+    //     lstin.addAll(arr);
+    //     lst.addAll(lstin);
+    // }
 }
