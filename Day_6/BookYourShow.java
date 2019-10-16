@@ -20,22 +20,8 @@ public class BookYourShow{
             resize();
         }
         shows[index] = show;
-        // binarySort(shows);
         index++;
     }
-
-    // public void binarySort(final Show[] arr) {
-    //     for (int i = 0; i < index; ++i) {
-    //         for (int j = i + 1; j < index + 1; ++j) {
-    //             if (shows[i].getNameOfTheMovie().compareTo(shows[j].getNameOfTheMovie()) > 0) {
-    //                 // swap shows[i] with shows[j]
-    //                 Show temp = shows[i];
-    //                 shows[i] = shows[j];
-    //                 shows[j] = temp;
-    //             }
-    //         }
-    //     }
-    // }
 
     public Show getAShow(String nameOfTheMovie, String dateTime){
         for(int i = 0; i < shows.length; i++) {
