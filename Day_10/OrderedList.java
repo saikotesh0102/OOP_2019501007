@@ -38,7 +38,7 @@ public class OrderedList extends AbstractList {
     }
     /**
      *
-     * @param item helps in deciding at whicho
+     * @param item helps in deciding at which
      * the position where it to be inserted in list
      */
     public void help(final int item) {
