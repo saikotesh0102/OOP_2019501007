@@ -1,6 +1,6 @@
 import java.util.*;
-import java.text.*;
 import java.time.*;
+import java.text.*;
 
 public final class ToDoList {
 
