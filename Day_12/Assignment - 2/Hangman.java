@@ -12,6 +12,7 @@ public class Hangman{
         while(scan.hasNextLine()){
             str = str + scan.nextLine() + "]";
         }
+        scan.close();
 
         if (str.charAt(str.length()-1) == ']'){
             str = str.substring(0, str.length() - 2);
@@ -90,6 +91,11 @@ public class Hangman{
             }else{
                 System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
             }
+            input.close();
+
+            // if(input.equals("exit")){
+            //     System.exit("exit");
+            // }
         }
 
         // System.out.println("You Entered " + number);
