@@ -47,17 +47,8 @@ public class Movies{
         return hint2;
     }
 
-    public void fileReading() throws Exception{
-        File file = new File("movies.txt");
-        Scanner scan = new Scanner(file);
-
-        while(scan.hasNext()){
-            String str = scan.nextLine();
-            if(! str.equals(" ")){
-                movie.add(new Movies(str, scan.nextLine(), scan.nextLine(), scan.nextLine()));
-            }
-        }
-        scan.close();
+    public String[] fileReading(String fileName) throws Exception{
+        
     }
 
     public void level(){
