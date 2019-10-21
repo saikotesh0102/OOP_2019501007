@@ -3,40 +3,8 @@ import java.util.*;
 import java.io.*;
 
 public class Hangman{
+
     public static void main(String[] args) throws Exception {
-        File file = new File("movies.txt");
-        Scanner scan = new Scanner(file);
-
-        String str = "" ;
-
-        while(scan.hasNextLine()){
-            str = str + scan.nextLine() + "]";
-        }
-        scan.close();
-
-        if (str.charAt(str.length()-1) == ']'){
-            str = str.substring(0, str.length() - 2);
-        }
-        // System.out.println(str);
-        String [] strArray = str.split("]");
-        // for (int i = 0; i < strArray.length; i++){
-        //     System.out.println(strArray[i]);
-        // }
-
-        String [] hardMovies = new String [7];
-        int indexHard = 0;
-
-        for (int i = 0; i < strArray.length - 2; i++){
-            if(strArray[i].equals("Hard")){
-                hardMovies[indexHard] = strArray[i-1];
-                indexHard++;
-            }
-        }
-        // System.out.println(strArray[strArray.length - 1]);
-        // for(int i = 0; i < hardMovies.length; i++){
-        //     System.out.println(hardMovies[i]);
-        // }
-        // System.out.println(hardMovies.length);
 
         String [] mediumMovies = new String [7];
         int indexMedium = 0;
@@ -52,15 +20,7 @@ public class Hangman{
         //     System.out.println(mediumMovies[i]);
         // }
 
-        String [] easyMovies = new String [8];
-        int indexEasy = 0;
-
-        for (int i = 0; i < strArray.length - 2; i++){
-            if(strArray[i].equals("Easy")){
-                easyMovies[indexEasy] = strArray[i-1];
-                indexEasy++;
-            }
-        }
+        
 
         // for(int i = 0; i < easyMovies.length; i++){
         //     System.out.println(easyMovies[i]);
@@ -92,12 +52,6 @@ public class Hangman{
                 System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
             }
             input.close();
-
-            // if(input.equals("exit")){
-            //     System.exit("exit");
-            // }
         }
-
-        // System.out.println("You Entered " + number);
     }
 }
