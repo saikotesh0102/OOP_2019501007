@@ -6,26 +6,6 @@ public class Hangman{
 
     public static void main(String[] args) throws Exception {
 
-        String [] mediumMovies = new String [7];
-        int indexMedium = 0;
-
-        for (int i = 0; i < strArray.length - 2; i++){
-            if(strArray[i].equals("Medium")){
-                mediumMovies[indexMedium] = strArray[i-1];
-                indexMedium++;
-            }
-        }
-
-        // for(int i = 0; i < mediumMovies.length; i++){
-        //     System.out.println(mediumMovies[i]);
-        // }
-
-        
-
-        // for(int i = 0; i < easyMovies.length; i++){
-        //     System.out.println(easyMovies[i]);
-        // }
-
         String [] defaultMovies = new String [22];
         int indexDefault = 0;
 
