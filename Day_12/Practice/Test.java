@@ -10,7 +10,7 @@ public class Test{
         while(scan.hasNext()){
             String str = scan.nextLine();
             if(! str.equals(" ")){
-
+                
             }
         }
         scan.close();
