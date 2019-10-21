@@ -58,8 +58,23 @@ public class Movies{
         }
         scan.close();
 
-        String [] strArray = str.split("]");
+        String [] strArray = str.split("]]");
         return strArray;
+    }
+
+    public void level(){
+        while(true){
+            Scanner input = new Scanner(System.in);
+            System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter Number : ");
+            String number = input.next();
+            
+            if (number.equals("1") || number.equals("2") || number.equals("3") || number.equals("4")){
+                break;
+            }else{
+                System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
+            }
+            input.close();
+        }
     }
 
     public String[] easyMovieDetails(){

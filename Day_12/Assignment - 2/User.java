@@ -26,5 +26,8 @@ public class User{
     public String getUserScore(){
         return score;
     }
-    
+
+    public String toString(){
+        return "User Name = " + this.name + "Score = " + this.score;
+    }
 }

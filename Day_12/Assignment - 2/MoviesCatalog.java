@@ -7,7 +7,12 @@ public class MoviesCatalog{
     Movies [] movieDetails;
 
     public MoviesCatalog(){
-        movieDetails = new Movies[10];
+        movieDetails = new Movies[22];
         index = 0;
+    }
+
+    public void addMovie(Movies movie){
+        movieDetails[index] = movie;
+        index++;
     }
 }
