@@ -16,17 +16,18 @@ public class MoviesCatalog{
         index++;
     }
 
-    public void fileReading() throws Exception{
+    public Movies[] fileReading() throws Exception{
         File file = new File("movies.txt");
         Scanner scan = new Scanner(file);
 
         while(scan.hasNextLine()){
             String str = scan.nextLine();
             if(! str.equals(" ")){
-                movie.add(new Movies(str, scan.nextLine(), scan.nextLine(), scan.nextLine()));
+                Movies.addMovie(new Movies(str, scan.nextLine(), scan.nextLine(), scan.nextLine()));
             }
         }
-        scan.close();
+        scan.close(); 
+        return movieDetails;
     }
 
     public Movies easyMovieDetails(){
@@ -35,7 +36,7 @@ public class MoviesCatalog{
         int indexEasy = 0;
 
         for (int i = 0; i < movieDetails.length; i++){
-            if(movieDetails[i].getlevel().equals("Easy")){
+            if(movieDetails[i].getLevel().equals("Easy")){
                 easyMovies[indexEasy++] = movieDetails[i];
             }
         }
@@ -44,7 +45,7 @@ public class MoviesCatalog{
         randomNumber = (randomNumber * easyMovies.length) + 1;
         int randomInt = (int) randomNumber;
 
-        return easyMovies[randomInt].getMovieName();
+        return easyMovies[randomInt];
     }
 
     public Movies mediumMovieDetails(){
@@ -53,7 +54,7 @@ public class MoviesCatalog{
         int indexMedium = 0;
 
         for (int i = 0; i < movieDetails.length; i++){
-            if(movieDetails[i].getlevel().equals("Medium")){
+            if(movieDetails[i].getLevel().equals("Medium")){
                 mediumMovies[indexMedium++] = movieDetails[i];
             }
         }
@@ -62,7 +63,7 @@ public class MoviesCatalog{
         randomNumber = (randomNumber * mediumMovies.length) + 1;
         int randomInt = (int) randomNumber;
 
-        return mediumMovies[randomInt].getMovieName();
+        return mediumMovies[randomInt];
     }
 
     public Movies hardMovieDetails(){
@@ -71,7 +72,7 @@ public class MoviesCatalog{
         int indexHard = 0;
 
         for (int i = 0; i < movieDetails.length; i++){
-            if(movieDetails[i].getlevel().equals("Hard")){
+            if(movieDetails[i].getLevel().equals("Hard")){
                 hardMovies[indexHard++] = movieDetails[i];
             }
         }
@@ -80,7 +81,7 @@ public class MoviesCatalog{
         randomNumber = (randomNumber * hardMovies.length) + 1;
         int randomInt = (int) randomNumber;
 
-        return hardMovies[randomInt].getMovieName();
+        return hardMovies[randomInt];
     }
 
     public Movies defaultMovieDetails(){
@@ -89,7 +90,7 @@ public class MoviesCatalog{
         int indexDefault = 0;
 
         for (int i = 0; i < movieDetails.length; i++){
-            if(movieDetails[i].getlevel().equals("Easy") || movieDetails[i].getlevel().equals("Medium") || movieDetails[i].getlevel().equals("Hard")){
+            if(movieDetails[i].getLevel().equals("Easy") || movieDetails[i].getLevel().equals("Medium") || movieDetails[i].getLevel().equals("Hard")){
                 defaultMovies[indexDefault++] = movieDetails[i];
             }
         }
@@ -98,7 +99,7 @@ public class MoviesCatalog{
         randomNumber = (randomNumber * defaultMovies.length) + 1;
         int randomInt = (int) randomNumber;
 
-        return defaultMovies[randomInt].getMovieName();
+        return defaultMovies[randomInt];
     }
 
     public void level(){
@@ -107,8 +108,14 @@ public class MoviesCatalog{
             System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter Number : ");
             String number = input.next();
 
-            if (number.equals("1") || number.equals("2") || number.equals("3") || number.equals("4")){
-                break;
+            if (number.equals("1")) {
+                easyMovieDetails();
+            }else if (number.equals("2")){
+                mediumMovieDetails();
+            }else if (number.equals("3")){
+                hardMovieDetails();
+            }else if (number.equals("4")){
+                defaultMovieDetails();
             }else{
                 System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
             }

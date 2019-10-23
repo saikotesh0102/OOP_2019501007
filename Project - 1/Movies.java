@@ -32,7 +32,7 @@ public class Movies{
     }
 
     public void setHint1(final String hint1){
-        this.hints = hints;
+        this.hint1 = hint1;
     }
 
     public String getHint1(){
