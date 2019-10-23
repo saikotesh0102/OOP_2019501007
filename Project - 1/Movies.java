@@ -32,7 +32,7 @@ public class Movies{
     }
 
     public void setHint1(final String hint1){
-        this.hint1 = hint1;
+        this.hints = hints;
     }
 
     public String getHint1(){
@@ -45,89 +45,5 @@ public class Movies{
 
     public String getHint2(){
         return hint2;
-    }
-
-    public void fileReading() throws Exception{
-        File file = new File("movies.txt");
-        Scanner scan = new Scanner(file);
-
-        while(scan.hasNext()){
-            String str = scan.nextLine();
-            if(! str.equals(" ")){
-                movie.add(new Movies(str, scan.nextLine(), scan.nextLine(), scan.nextLine()));
-            }
-        }
-        scan.close();
-    }
-
-    public void level(){
-        while(true){
-            Scanner input = new Scanner(System.in);
-            System.out.print("1 for Easy\n2 for Medium\n3 for Hard\n4 for Random\nEnter Number : ");
-            String number = input.next();
-
-            if (number.equals("1") || number.equals("2") || number.equals("3") || number.equals("4")){
-                break;
-            }else{
-                System.out.print("----------------------------\nNumber must be 1 or 2 or 3 or 4\n");
-            }
-            input.close();
-        }
-    }
-
-    public String[] easyMovieDetails(){
-        String[] movieDetails = fileReading();
-        String [] easyMovies = new String [8];
-        int indexEasy = 0;
-
-        for (int i = 0; i < movieDetails.length - 2; i++){
-            if(movieDetails[i].equals("Easy")){
-                easyMovies[indexEasy] = movieDetails[i-1];
-                indexEasy++;
-            }
-        }
-        return easyMovies;
-    }
-
-    public String[] mediumMovieDetails(){
-        String[] movieDetails = fileReading();
-        String [] easyMovies = new String [7];
-        int indexMedium = 0;
-
-        for (int i = 0; i < movieDetails.length - 2; i++){
-            if(movieDetails[i].equals("Medium")){
-                easyMovies[indexEasy] = movieDetails[i-1];
-                indexMedium++;
-            }
-        }
-        return mediumMovies;
-    }
-
-    public String[] hardMovieDetails(){
-        String[] movieDetails = fileReading();
-        String [] hardMovies = new String [7];
-        int indexHard = 0;
-
-        for (int i = 0; i < movieDetails.length - 2; i++){
-            if(movieDetails[i].equals("Hard")){
-                hardMovies[indexHard] = movieDetails[i-1];
-                indexHard++;
-            }
-        }
-        return hardMovies;
-    }
-
-    public String[] defaultMovieDetails(){
-        String[] movieDetails = fileReading();
-        String [] defaultMovies = new String [7];
-        int indexDefault = 0;
-
-        for (int i = 0; i < strArray.length - 2; i++){
-            if(movieDetails[i].equals("Easy") || movieDetails[i].equals("Medium") || movieDetails[i].equals("Hard")){
-                defaultMovies[indexDefault] = strArray[i-1];
-                indexDefault++;
-            }
-        }
-        return defaultMovies;
     }
 }
