@@ -4,10 +4,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-/**
- * @author theunknownSAI
- */
-
 public final class Main {
     private Main() {
     }
