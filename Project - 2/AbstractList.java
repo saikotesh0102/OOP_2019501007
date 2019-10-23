@@ -1,8 +1,5 @@
-import java.util.Arrays;
-/**
- * @author theunknownSAI
- * @param <E>
- */
+import java.util.*;
+
 abstract class AbstractList<E extends Comparable<E>>
     implements ListInterface<E> {
     /**
@@ -19,7 +16,7 @@ abstract class AbstractList<E extends Comparable<E>>
     public void reSize() {
         this.elements = Arrays.copyOf(this.elements, this.elements.length + 1);
     }
-   /**
+    /**
      * Get method has to return the items that is
      * at the index position passed as an argument to the method.
      * If the item doesn't exist then return a -1 to indicate that
