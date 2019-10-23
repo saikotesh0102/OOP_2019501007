@@ -4,42 +4,42 @@ public class Movie {
     private String production;
     private String cast;
 
-    Movie(final String movieName1, final String level1, final String production1, final String cast1) {
-        this.movieName = movieName1;
-        this.level = level1;
-        this.production = production1;
-        this.cast = cast1;
+    Movie(final String movieName, final String level, final String production, final String cast) {
+        this.movieName = movieName;
+        this.level = level;
+        this.production = production;
+        this.cast = cast;
     }
     public String getMovieName() {
             return movieName;
     }
 
-    public void setMovieName(final String movieName1) {
-        this.movieName = movieName1;
+    public void setMovieName(final String movieName) {
+        this.movieName = movieName;
     }
 
     public String getLevel() {
         return level;
     }
 
-    public void setLevel(final String level1) {
-        this.level = level1;
+    public void setLevel(final String level) {
+        this.level = level;
     }
 
     public String getProduction() {
         return production;
     }
 
-    public void setProduction(final String production1) {
-        this.production = production1;
+    public void setProduction(final String production) {
+        this.production = production;
     }
 
     public String getCast() {
         return cast;
     }
 
-    public void setCast(final String cast1) {
-        this.cast = cast1;
+    public void setCast(final String cast) {
+        this.cast = cast;
     }
 
 }

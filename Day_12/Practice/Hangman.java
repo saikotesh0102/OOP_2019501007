@@ -71,7 +71,6 @@ class Hangman {
             } else {
                 System.out.println("wrong input ... default selected level is medium");
                 return "medium";
-                // levelChoice = 2;
             }
             switch (levelChoice) {
                 case 1:choosenLevel = "easy";
@@ -92,7 +91,7 @@ class Hangman {
                         break;
                     }
                 break;
-                default : choosenLevel = "medium";
+                default : choosenLevel = "hard";
             }
             System.out.println("selected level is " + choosenLevel);
             return choosenLevel;

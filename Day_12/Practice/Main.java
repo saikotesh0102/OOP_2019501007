@@ -48,7 +48,7 @@ public final class Main {
     }
     public static void main(final String[] args) {
         System.out.println("enter the number of players ");
-        int numberOfPlayers = 2 + 2;
+        int numberOfPlayers = 4;
         Scanner sc = new Scanner(System.in);
         try {
             if (sc.hasNext()) {
@@ -63,8 +63,7 @@ public final class Main {
             if (fileContents == null) {
                 throw new NullPointerException();
             }
-            final int four = 4;
-            final int numberOfMovies = fileContents.length / four;
+            final int numberOfMovies = fileContents.length / 4;
             Hangman hangman = new Hangman(numberOfMovies, numberOfPlayers);
             hangman.setDetails(fileContents);
             hangman.readPlayerDetails(numberOfPlayers);
