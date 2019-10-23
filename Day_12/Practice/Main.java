@@ -1,21 +1,13 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.InputMismatchException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public final class Main {
+
     private Main() {
+
     }
-    /**
-     * reads the file and adds the line into ArrayList.
-     * empty lines are skipped
-     * converts the arrayList into a String array
-     * @param fileName string . name of the file.
-     * @return string array .
-     * @throws FileNotFoundException .
-     */
-     private static String[] readFile(final String fileName) throws FileNotFoundException {
+
+    private static String[] readFile(final String fileName) throws FileNotFoundException {
         try {
             File file = new File(fileName);
             Scanner scan = new Scanner(file);
@@ -34,11 +26,7 @@ public final class Main {
             return null;
         }
     }
-    /**
-     * sorts the players based on the score.
-     * and displays .
-     * @param players list of players .
-     */
+
     private static void leaderBoard(final Player[] players) {
         System.out.println(players.length);
         if (players == null) {
@@ -58,11 +46,6 @@ public final class Main {
             System.out.println(" playerName = " + players[i].getPlayerName() + " playerScore " + players[i].getPlayerScore());
         }
     }
-    /**
-     * reads the numberOfPlayers .
-     * if correct input is not given default number 4 is taken.
-     * @param args .
-     */
     public static void main(final String[] args) {
         System.out.println(" enter the number of players ");
         int numberOfPlayers = 2 + 2;

@@ -1,19 +1,7 @@
-class Movie {
-    /**
-     * name of the movie .
-     */
+public class Movie {
     private String movieName;
-     /**
-     * level of the movie .
-     */
     private String level;
-     /**
-     * production of the movie .
-     */
     private String production;
-     /**
-     * cast of the movie .
-     */
     private String cast;
 
     Movie(final String movieName1, final String level1, final String production1, final String cast1) {

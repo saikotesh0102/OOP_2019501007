@@ -1,11 +1,6 @@
-class Player {
-    /**
-     * name of the player .
-     */
+public class Player {
+    
     private String playerName;
-    /**
-     * points scored  by player .
-     */
     private int playerScore;
 
     Player(final String playerName1, final int playerScore1) {
