@@ -43,7 +43,7 @@ public final class Main {
         }
         System.out.println("LeaderBoard ");
         for (int i = 0; i < players.length; i++) {
-            System.out.println("playerName = " + players[i].getPlayerName() + "playerScore " + players[i].getPlayerScore());
+            System.out.println("playerName = " + players[i].getPlayerName() + " playerScore :" + players[i].getPlayerScore());
         }
     }
     public static void main(final String[] args) {
