@@ -60,7 +60,7 @@ class Hangman {
 
     private String pickLevel() {
         Scanner scan = new Scanner(System.in);
-        System.out.println("\n 1 : easy\n 2 : medium\n3 : Hard \n4 : computer \nenter a level number only. ");
+        System.out.println("\n1 : easy\n2 : medium\n3 : Hard \n4 : computer \nenter a level number only. ");
         int levelChoice;
         String choosenLevel = "";
         final int three = 3;
@@ -69,7 +69,7 @@ class Hangman {
             if (scan.hasNext()) {
                 levelChoice = scan.nextInt();
             } else {
-                System.out.println(" wrong input ... default selected level is medium ");
+                System.out.println("wrong input ... default selected level is medium");
                 return "medium";
                 // levelChoice = 2;
             }
@@ -94,10 +94,10 @@ class Hangman {
                 break;
                 default : choosenLevel = "medium";
             }
-            System.out.println(" selected level is " + choosenLevel);
+            System.out.println("selected level is " + choosenLevel);
             return choosenLevel;
         } catch (InputMismatchException e) {
-            System.out.println(" wrong input ... default selected level is medium ");
+            System.out.println("wrong input ... default selected level is medium ");
             return "medium";
         }
     }
@@ -173,7 +173,7 @@ class Hangman {
             return guess;
         }
         if (guess.length() != 1) {
-            System.out.println(" enter only a alphabet of length 1 ");
+            System.out.println("enter only a alphabet of length 1");
             return "oneCharacterOnly";
         }
         int asc = (int) (guess.charAt(0));
@@ -182,7 +182,7 @@ class Hangman {
         if (asc >= start && asc <= end) {
             return guess;
         } else {
-            System.out.println(" enter only a alphabet ");
+            System.out.println("enter only a alphabet");
             return "alphabetsOnly";
         }
     }
@@ -234,7 +234,7 @@ class Hangman {
         int index = -1;
         String[] tempGuessMovie = guessedMovieName;
         for (int i = 0; i < frequency; i++) {
-            System.out.println(" correct !!! ");
+            System.out.println("correct !!! ");
             index = randomMovieName.indexOf(guess, index);
             tempGuessMovie[index] = guess;
             index = index + 1;
@@ -265,9 +265,9 @@ class Hangman {
     }
     
     private void displayInfo(final String alphabetsRemaining, final String alphabetsGuessed, final String[] guessedMovieName) {
-        System.out.println(" availableAlphabets = " + this.format(alphabetsRemaining));
-        System.out.println(" alphabetsGuessed = " + this.format(alphabetsGuessed));
-        System.out.println(" guessedMovieName = " + this.arrToStr(guessedMovieName));
+        System.out.println("availableAlphabets = " + this.format(alphabetsRemaining));
+        System.out.println("alphabetsGuessed = " + this.format(alphabetsGuessed));
+        System.out.println("guessedMovieName = " + this.arrToStr(guessedMovieName));
     }
 
     private String[] putRandomChars(String movieName, String[] guessedMovieName) {
@@ -284,11 +284,11 @@ class Hangman {
         // System.out.println(" numberOfPlayers " + this.players.length);
         String playerName = "Player ";
         for (int i = 0; i < count; i++) {
-            System.out.println(" enter Player " + (i + 1) + " Name ");
+            System.out.println("enter Player " + (i + 1) + " Name ");
             if (sc.hasNext()) {
                 playerName = sc.next();
             } else {
-                System.out.println(" wrong input ... default name is used ");
+                System.out.println("wrong input ... default name is used ");
                 playerName = playerName + (i + 1);
             }
             Player temp = new Player(playerName, 0);
@@ -316,8 +316,8 @@ class Hangman {
             int wrongGuesses = 0;
             boolean hintTaken = false;
             guessedMovieName = this.putRandomChars(randomMovieName, guessedMovieName);
-            System.out.println(" randomMovieName " + randomMovieName);
-            System.out.println(" randomMovieLength " + (randomMovieLength - count));
+            System.out.println("randomMovieName " + randomMovieName);
+            System.out.println("randomMovieLength " + (randomMovieLength - count));
 
             while (maxGuesses != 0 && (correctGuesses != (randomMovieLength - count))) {
                 this.displayInfo(alphabetsRemaining, alphabetsGuessed, guessedMovieName);
@@ -338,7 +338,7 @@ class Hangman {
                         correctGuesses = correctGuesses + frequency;
                         playerScore = playerScore + frequency;
                     } else {
-                        System.out.println(" wrong !!! ");
+                        System.out.println("wrong !!!");
                         wrongGuesses++;
                         playerScore--;
                         maxGuesses--;
@@ -346,7 +346,7 @@ class Hangman {
                     alphabetsRemaining = alphabetsRemaining.replaceAll(guess, "");
                     alphabetsGuessed = alphabetsGuessed + guess;
                 } else {
-                    System.out.println(" letter already guessed ");
+                    System.out.println("letter already guessed");
                 }
             }
             if (!hintTaken) {
@@ -354,7 +354,7 @@ class Hangman {
                 playerScore = playerScore + hundred;
             }
             this.players[current].setPlayerScore(playerScore);
-            System.out.println(" playerName " + this.players[current].getPlayerName() + " playerScore " + this.players[current].getPlayerScore());
+            System.out.println("playerName " + this.players[current].getPlayerName() + "playerScore " + this.players[current].getPlayerScore());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
