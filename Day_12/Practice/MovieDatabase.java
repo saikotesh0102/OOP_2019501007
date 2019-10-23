@@ -1,17 +1,10 @@
 import java.util.*;
+import java.io.*;
 
-class MovieDatabase {
-    /**
-     * an arraylist of movies of easy level.
-     */
+public class MovieDatabase {
+    
     private ArrayList<Movie> easyMovies;
-    /**
-     * an arraylist of movies of medium level.
-     */
     private ArrayList<Movie> mediumMovies;
-    /**
-     * an arraylist of movies of hard level.
-     */
     private ArrayList<Movie> hardMovies;
 
     MovieDatabase() {
@@ -24,23 +17,23 @@ class MovieDatabase {
         return easyMovies;
     }
 
-    public void setEasyMovies(final Movie easyMovies1) {
-        this.easyMovies.add(easyMovies1);
+    public void setEasyMovies(final Movie easyMovies) {
+        this.easyMovies.add(easyMovies);
     }
 
     public ArrayList<Movie> getMediumMovies() {
         return mediumMovies;
     }
 
-    public void setMediumMovies(final Movie mediumMovies1) {
-        this.mediumMovies.add(mediumMovies1);
+    public void setMediumMovies(final Movie mediumMovies) {
+        this.mediumMovies.add(mediumMovies);
     }
 
     public ArrayList<Movie> getHardMovies() {
         return hardMovies;
     }
 
-    public void setHardMovies(final Movie hardMovies1) {
-        this.hardMovies.add(hardMovies1);
+    public void setHardMovies(final Movie hardMovies) {
+        this.hardMovies.add(hardMovies);
     }
 }

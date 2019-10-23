@@ -3,17 +3,10 @@ import java.util.*;
 
 public final class Main {
     private Main() {
+
     }
-    /**
-     * reads the file and adds the line into ArrayList.
-     * empty lines are skipped
-     * converts the arrayList into a String array
-     * @param fileName string . name of the file.
-     * @return string array contains details of file.
-     * @throws FileNotFoundException if file is not found.
-     */
-     private static String[] readFile(final String fileName)
-            throws FileNotFoundException {
+
+    private static String[] readFile(final String fileName) throws FileNotFoundException {
         try {
             File file = new File(fileName);
             Scanner scan = new Scanner(file);
@@ -32,11 +25,7 @@ public final class Main {
             return null;
         }
     }
-    /**
-     * sorts the players based on the score.
-     * and displays the player name and score.
-     * @param players array of players .
-     */
+    
     private static void leaderBoard(final Player[] players) {
         System.out.println(players.length);
         if (players == null) {
@@ -44,35 +33,22 @@ public final class Main {
         }
         for (int i = 0; i < players.length - 1; i++) {
             for (int j = 0; j < players.length - i - 1; j++) {
-                if (players[j].getPlayerScore()
-                    <
-                    players[j + 1].getPlayerScore()) {
+                if (players[j].getPlayerScore() < players[j + 1].getPlayerScore()) {
                     Player temp = players[j];
                     players[j] = players[j + 1];
                     players[j + 1] = temp;
                 }
             }
         }
-        System.out.println(" LeaderBoard ");
+        System.out.println("LeaderBoard ");
         for (int i = 0; i < players.length; i++) {
-            System.out.println(" playerName = " + players[i].getPlayerName()
-                + " playerScore " + players[i].getPlayerScore());
+            System.out.println("playerName = " + players[i].getPlayerName() + " playerScore : " + players[i].getPlayerScore());
         }
     }
-    /**
-     * reads the numberOfPlayers .
-     * if correct input is not given default number 4 is taken.
-     * reads the file and stores the details of file.
-     * uses a function to set the details to movie database.
-     * reads the player details.
-     * plays the hangman game for each player.
-     * after all players are done playing leaderBoard is called
-     * to dislpay positions of each player based on score.
-     * @param args .
-     */
+    
     public static void main(final String[] args) {
-        System.out.println(" enter the number of players ");
-        int numberOfPlayers = 2 + 2;
+        System.out.println("enter the number of players ");
+        int numberOfPlayers = 4;
         Scanner sc = new Scanner(System.in);
         try {
             if (sc.hasNext()) {
@@ -82,7 +58,7 @@ public final class Main {
             System.out.println("wrong input...default number of players is 4 ");
         }
         try {
-            System.out.println(" number of players " + numberOfPlayers);
+            System.out.println("number of players " + numberOfPlayers);
             String[] fileContents = readFile("movies.txt");
             if (fileContents == null) {
                 throw new NullPointerException();
