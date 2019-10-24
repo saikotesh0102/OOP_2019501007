@@ -24,7 +24,7 @@ public final class Main {
     }
     
     private static void leaderBoard(final Player[] players) {
-        System.out.println(players.length);
+        // System.out.println(players.length);
         if (players == null) {
             return;
         }
