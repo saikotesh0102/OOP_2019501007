@@ -275,6 +275,8 @@ public class Hangman {
                         System.out.println(randomMovie.getCast());
                     } else if (count == 2){
                         System.out.println(randomMovie.getProduction());
+                    }else{
+                        System.out.println("No More Hints Left");
                     }
                     continue;
                 }
