@@ -2,9 +2,6 @@ import java.io.*;
 import java.util.*;
 
 public final class Main {
-    private Main() {
-
-    }
 
     private static String[] readFile(final String fileName) throws FileNotFoundException {
         try {
