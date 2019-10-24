@@ -11,7 +11,7 @@ public class Movie {
         this.cast = cast;
     }
     public String getMovieName() {
-            return movieName;
+        return movieName;
     }
 
     public void setMovieName(final String movieName) {

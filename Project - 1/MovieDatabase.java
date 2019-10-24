@@ -7,7 +7,7 @@ public class MovieDatabase {
     private ArrayList<Movie> mediumMovies;
     private ArrayList<Movie> hardMovies;
 
-    MovieDatabase() {
+    public MovieDatabase() {
         easyMovies = new ArrayList<>();
         mediumMovies = new ArrayList<>();
         hardMovies = new ArrayList<>();

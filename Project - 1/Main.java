@@ -39,12 +39,13 @@ public final class Main {
         }
         System.out.println("LeaderBoard ");
         for (int i = 0; i < players.length; i++) {
-            System.out.println("playerName = " + players[i].getPlayerName() + " playerScore : " + players[i].getPlayerScore());
+            System.out.println("Player Name : " + players[i].getPlayerName() + " PlayerScore : " + players[i].getPlayerScore());
         }
     }
     
     public static void main(final String[] args) {
-        System.out.println("enter the number of players ");
+        System.out.println("Welcome to Hangman");
+        System.out.println("Enter the number of Players ");
         int numberOfPlayers = 4;
         Scanner sc = new Scanner(System.in);
         try {
@@ -52,10 +53,10 @@ public final class Main {
                 numberOfPlayers = sc.nextInt();
             }
         } catch (InputMismatchException is) {
-            System.out.println("wrong input...default number of players is 4 ");
+            System.out.println("Wrong input...default number of players is 4 ");
         }
         try {
-            System.out.println("number of players " + numberOfPlayers);
+            System.out.println("Number of players " + numberOfPlayers);
             String[] fileContents = readFile("movies.txt");
             if (fileContents == null) {
                 throw new NullPointerException();
