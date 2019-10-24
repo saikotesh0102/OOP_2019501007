@@ -32,8 +32,7 @@ public class Hangman {
         System.out.println("\n1 : easy \n2 : medium\n3 : Hard \n4 : computer \nenter a level number only. ");
         int levelChoice;
         String choosenLevel = "";
-        // final int three = 3;
-        // final int four = 4;
+        
         try {
             if (scan.hasNext()) {
                 levelChoice = scan.nextInt();
