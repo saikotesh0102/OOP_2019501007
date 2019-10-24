@@ -1,62 +1,51 @@
 class OrderedList<E extends Comparable<E>> extends AbstractList<E> {
-
+    public OrderedList(){
+        this.list = (E[]) new Comparable[10];
+        this.size =0;
+    }
     /**
-    * The add method does what the name suggests.
-    * Add an int item to the array.
-    * The assumption is to store the item in the array such that
-    * entire array is in sorted array.
-    * The method returns void (nothing)
-    * @param item element to be added.
-    */
-    public void add(final E item) {
-        int position = -1;
-        E temp = null;
-        if (this.size == 0) {
-            this.reSize();
-            this.elements[this.size] = item;
-            this.size = this.size + 1;
-            return;
+     * 
+     */
+    public void add(E item) {
+        if (size == list.length) {
+            resize();
         }
-
-        for (int i = 0; i < this.size; i++) {
-            if (item.compareTo(this.elements[i]) <= 0) {
-                temp = this.elements[i];
-                position = i;
+        if (size == 0){
+            list[size] = item;
+            size += 1;
+        }else{
+        for (int i = 0; i < size; i++) {
+            if (item.compareTo(list[i]) <= 0) {
+                E temp = list[i];
+                list[i] = item;
+                rearrange(i, temp);
                 break;
             }
         }
-        if (position != -1) {
-            this.reSize();
-            for (int i = this.size; i > position; i--) {
-                this.elements[i] = this.elements[i - 1];
-            }
-            this.elements[position] = item;
-            this.size = this.size + 1;
-        } else {
-            this.reSize();
-            this.elements[this.size] = item;
-            this.size = this.size + 1;
-        }
+        list[size] = item;
+        size += 1;
     }
-
+    }
+    
     /**
-     * Appends all of the elements in the specified array.
-     * @param lst list containing elements to be added to this list.
-     * @exception InvalidIndexException when unable to get the element of list .
+     * 
+     * @param lst
+     * @throws InvalidIndexException
      */
-    public void addAll(final List<E> lst) throws InvalidIndexException {
-        for (int i = 0; i < lst.size(); i++) {
+    public void addAll(List<E> lst) throws InvalidIndexException {
+        for (int i = 0; i < lst.size(); i++){
             this.add(lst.get(i));
         }
     }
-
     /**
-     * Appends all of the elements in the specified array.
-     * @param items list containing elements to be added to this list.
+     * 
+     * @param i
+     * @param temp
      */
-    public void addAll(final E[] items) {
-        for (int i = 0; i < items.length; i++) {
-            this.add(items[i]);
+    private void rearrange(int i, E temp) {
+        for (int j = i + 1; j < size - 1; j++) {
+            list[j] = temp;
+            temp = list[j + 1];
         }
     }
 }
