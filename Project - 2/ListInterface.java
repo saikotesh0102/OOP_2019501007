@@ -1,3 +1,9 @@
+/**
+ * This acts as an interface (Generic ListADT API) for the client.
+ * 
+ * @author Siva Sankar
+ */
+
 public interface ListInterface<E extends Comparable<E>> {
     /**
      * Adds an item to this List.

@@ -17,7 +17,6 @@ public class InvalidIndexException extends Exception {
      * 
      * @param message to be set to super class's message.
      */
-    
     public InvalidIndexException(String message) {
         super(message);
     }

@@ -1,7 +1,9 @@
-public abstract class AbstractList<E extends Comparable<E>> implements ListInterface<E>{
+abstract class AbstractList<E extends Comparable<E>> implements ListInterface<E>{
     E[] list;
     int size;
-    
+    /**
+     * 
+     */
     public void resize() {
         E[] tempArray = (E[]) new Comparable[size * 2];
         for (int i = 0; i < size; i++){
@@ -11,14 +13,18 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         list = tempArray;
         tempArray = null;
     }
-    
+    /**
+     * 
+     */
     public E get(int index) throws InvalidIndexException{
         if (index < 0 || index >=size){
             throw new InvalidIndexException("Index exception Error");
         }
         return list[index];
     }
-    
+    /**
+     * 
+     */
     public boolean contains(E item) {
         for (int i = 0; i < size; i++){
             if (item.compareTo(list[i]) == 0){
@@ -27,7 +33,9 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         }
         return false;
     }
-    
+    /**
+     * 
+     */
     public void remove(int index) throws InvalidIndexException{
         if (index >= size || index < 0){
             throw new InvalidIndexException("Index exception Error");
@@ -38,11 +46,15 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
             list[size] = null;
             size -= 1;
     }
-    
+    /**
+     * 
+     */
     public int size() {
         return size;
     }
-    
+    /**
+     * 
+     */
     public int indexOf(E item) {
         for (int i = 0; i < size; i++){
             if (item.compareTo(list[i]) == 0){
@@ -51,7 +63,11 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         }
         return -1;
     }
-    
+    /**
+     * 
+     * @param item
+     * @return
+     */
     public int lastIndexOf(E item){
         if (this.contains(item)){
             for (int i = size -1; i>=0; i--) {
@@ -62,7 +78,11 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         } 
             return -1;
     }
-    
+    /**
+     * 
+     * @param item
+     * @return
+     */
     public int count(E item){
         int times = 0;
         for (int i =0; i < size; i++){
@@ -72,7 +92,6 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         }
         return times;
     }
-
     public String toString() {
         if(size == 0) {
             return "empty";
@@ -86,13 +105,17 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         str.append(list[size - 1] + "]");
         return str.toString();
     }
-    
+    /**
+     * 
+     */
     public void set(int index, E item){
         if (index <= size){
             list[index] = item;
         }
     }
-    
+    /**
+     * 
+     */
     public List<E> subList(int fromIndex, int toIndex){
         List<E> tempList = new List<E>();
         if (fromIndex < size && toIndex <=size && fromIndex >= 0 && toIndex > 0){
@@ -103,13 +126,15 @@ public abstract class AbstractList<E extends Comparable<E>> implements ListInter
         }
         return null;
     }
-    
+    /**
+     * 
+     * @param items
+     */
     public void addAll(E[] items){
         for (int i = 0; i < items.length; i++){
             this.add(items[i]);
         }
     }
-    
     public void addAll(List<E> lst) throws InvalidIndexException {
         for (int i = 0; i < lst.size(); i++){
             this.add(lst.get(i));

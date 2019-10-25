@@ -1,4 +1,4 @@
-public abstract class AbstractSet<E extends Comparable<E>> extends AbstractList<E> implements SetInterface<E> {
+abstract class AbstractSet<E extends Comparable<E>> extends AbstractList<E> implements SetInterface<E> {
 
     /**
      * This method returns the sublist from this list based on fromIndex and
@@ -11,7 +11,6 @@ public abstract class AbstractSet<E extends Comparable<E>> extends AbstractList<
      * @return a List which is a subList of this list.
      * @throws InvalidIndexException if fromIndex and toIndex is invalid.
      */
-
     public boolean isSubSet(Set<E> setA) {
         for (int i = 0; i < setA.size(); i++) {
             if (!this.contains((E) setA.list[i])) {
@@ -32,7 +31,6 @@ public abstract class AbstractSet<E extends Comparable<E>> extends AbstractList<
         
         return tempSet;
     }
-
     public Set<E> intersection(Set<E> setA) throws InvalidIndexException {
         Set<E> tempSet = new Set<E>();
             for (int i = 0; i < setA.size(); i++) {
