@@ -7,10 +7,10 @@ public class Set<E extends Comparable<E>> extends AbstractSet<E>{
     public void add(E item) {
         if (!this.contains(item)){
             if (size == list.length) {
-            resize();
-        }
-        list[size] = item;
-        size += 1;
+                resize();
+            }
+            list[size] = item;
+            size += 1;
         }
     }
     public void add(int index, E item) throws InvalidIndexException {
@@ -22,7 +22,7 @@ public class Set<E extends Comparable<E>> extends AbstractSet<E>{
                 temp2 = list[j];
                 list[j] = temp;
                 temp = temp2;
-                }
+            }
             size += 1;
         }
     }

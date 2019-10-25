@@ -3,9 +3,7 @@ class List<E extends Comparable<E>> extends AbstractList<E> {
         this.list = (E[]) new Comparable[10];
         this.size =0;
     }
-    /**
-     * 
-     */
+    
     public void add(E item) {
         if (size == list.length) {
             resize();
@@ -14,11 +12,6 @@ class List<E extends Comparable<E>> extends AbstractList<E> {
         size += 1;
     }
     
-    /**
-     * 
-     * @param index
-     * @param item
-     */
     public void add(int index, E item) throws InvalidIndexException {
         if (index < size && index >=0){
             E temp2;
@@ -28,7 +21,7 @@ class List<E extends Comparable<E>> extends AbstractList<E> {
                 temp2 = list[j];
                 list[j] = temp;
                 temp = temp2;
-                }
+            }
             size += 1;
         }
     }
