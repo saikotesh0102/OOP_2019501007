@@ -263,7 +263,6 @@ public class Hangman {
             guessedMovieName = this.putRandomChars(randomMovieName, guessedMovieName);
             int numberOfLettersLeft = this.numberOfLettersLeft(guessedMovieName);
             int maxGuesses = numberOfLettersLeft;
-            // System.out.println("movie Name : " + randomMovieName);
             System.out.println("movie Length : " + randomMovieLength);
             System.out.println("number of letters to guess : " + numberOfLettersLeft);
             while (maxGuesses != 0 && numberOfLettersLeft != 0) {
@@ -301,6 +300,10 @@ public class Hangman {
                     System.out.println("Letter already guessed ");
                 }
             }
+            if (maxGuesses == 0){
+                System.out.println("movie Name : " + randomMovieName);
+            }
+            
             if (count == 0) {
                 playerScore = playerScore + 100;
             }else if(count == 1){
