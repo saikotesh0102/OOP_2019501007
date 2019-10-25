@@ -5,7 +5,9 @@ import java.lang.*;
 public class Hangman {
     private MovieDatabase moviesDatabase;
     private Player[] players;
-
+    /** 
+     * Setters and Getters
+    */
     public Player[] getPlayers() {
         return players;
     }
@@ -26,7 +28,12 @@ public class Hangman {
         players = new Player[numberOfPlayers];
         moviesDatabase = new MovieDatabase();
     }
-    
+    /**
+     * Method to pick a level from user based on inputs
+     * 1 for easy, 2 for medium, 3 for hard, 4 to chose a random level
+     * @return Movie Name
+     */
+
     private String pickLevel() {
         Scanner scan = new Scanner(System.in);
         System.out.println("\n1 : easy \n2 : medium\n3 : hard \n4 : computer \nenter a level number only. ");
@@ -67,7 +74,10 @@ public class Hangman {
             return "medium";
         }
     }
-
+    /**
+     * Method is used to set the details to the chosen level
+     * @param details
+     */
     public void setDetails(final String[] details) {
         //create MoviesInfo object
         for (int i = 0; i < details.length; i = i + 4) {
@@ -85,7 +95,11 @@ public class Hangman {
             }
         }
     }
-    
+    /**
+     * Method is used to get the details of the choosen level into the array
+     * @param choosenLevel
+     * @return Arraylist of Movie type.
+     */
     private ArrayList<Movie> getDetails(final String choosenLevel) {
         if (choosenLevel.equals("easy")) {
             return this.moviesDatabase.getEasyMovies();
@@ -97,13 +111,21 @@ public class Hangman {
             return this.moviesDatabase.getMediumMovies();
         }
     }
-    
+    /**
+     * Method to selct a ranom movie name from 
+     * user picked level
+     * @param levelMovies
+     * @return MovieName
+     */
     private Movie selectRandomMovie(final ArrayList<Movie> levelMovies) {
         int randomIndex = (int) (Math.random() * levelMovies.size());
         Movie randomMovie = levelMovies.get(randomIndex);
         return randomMovie;
     }
-    
+    /**
+     * Method to provide user to select a character or hint.
+     * @return String of Albhabets
+     */
     private String takeInput() {
         Scanner scan = new Scanner(System.in);
         System.out.println("enter a character or hint ");
@@ -128,7 +150,12 @@ public class Hangman {
             return "alphabets Only";
         }
     }
-    
+    /**
+     * Method to check whether the letter is already guessed or not.
+     * @param alreadyGuessed
+     * @param guess
+     * @return true or false
+     */
     private boolean isAlreadyGuessed(final String alreadyGuessed,final String guess) {
         int flag = alreadyGuessed.indexOf(guess);
         if (flag == -1) {
@@ -136,7 +163,11 @@ public class Hangman {
         }
         return true;
     }
-
+    /**
+     * Method to convert Array format to string format
+     * @param form
+     * @return String of alphabets
+     */
     private String format(final String form) {
         String temp = "";
         for (int i = 0; i < form.length(); i++) {
@@ -144,7 +175,11 @@ public class Hangman {
         }
         return temp;
     }
-
+    /**
+     * Method to convert array to string
+     * @param form
+     * @return String of guessed letters
+     */
     private String arrToStr(final String[] form) {
         String temp = "";
         for (int i = 0; i < form.length; i++) {
@@ -153,7 +188,12 @@ public class Hangman {
         temp = temp.substring(0, temp.length() - 1);
         return temp;
     }
-
+    /**
+     * Method to check whether the letter is guessed or not.
+     * @param randomMovie
+     * @param guess
+     * @return true or false
+     */
     private boolean checkGuess(final String randomMovie, final String guess) {
         int flag = randomMovie.indexOf(guess);
         if (flag == -1) {
@@ -161,7 +201,14 @@ public class Hangman {
         }
         return true;
     }
-
+    /**
+     * Method to give a score to user based on his guesses
+     * if guess is good award him a point.
+     * @param randomMovieName
+     * @param guess
+     * @param guessedMovieName
+     * @return Score
+     */
     private int getFrequency(final String randomMovieName,final String guess,final String[] guessedMovieName) {
         int frequency = 0;
         for (int i = 0; i < randomMovieName.length(); i++) {
@@ -171,7 +218,14 @@ public class Hangman {
         }
         return frequency;
     }
-
+    /**
+     * Method to replace the underscore with guessed letter
+     * @param randomMovieName
+     * @param guess
+     * @param guessedMovieName
+     * @param frequency
+     * @return String array
+     */
     private String[] replaceWithGuess(final String randomMovieName, final String guess, final String[] guessedMovieName, final int frequency) {
         int index = -1;
         String[] tempGuessMovie = guessedMovieName;
@@ -190,7 +244,11 @@ public class Hangman {
         }
         return tempGuessMovie;
     }
-    
+    /**
+     * Method to replace the String length with Under Scores
+     * @param movieName
+     * @return String array
+     */
     private String[] replaceWithUnderScores(final String movieName) {
         String[] guessedMovieName = new String[movieName.length()];
         for (int i = 0; i < movieName.length(); i++) {
@@ -202,13 +260,23 @@ public class Hangman {
         }
         return guessedMovieName;
     }
-    
+    /**
+     * Method to display the dtails to the user.
+     * @param alphabetsRemaining
+     * @param alphabetsGuessed
+     * @param guessedMovieName
+     */
     private void displayInfo(final String alphabetsRemaining, final String alphabetsGuessed,final String[] guessedMovieName) {
         System.out.println("Available Alphabets = " + this.format(alphabetsRemaining));
         System.out.println("Alphabets Guessed = " + this.format(alphabetsGuessed));
         System.out.println("Guessed Movie Name = " + this.arrToStr(guessedMovieName));
     }
-    
+    /**
+     * Method to diaplay some random characters in String.
+     * @param movieName
+     * @param guessedMovieName
+     * @return String array
+     */
     private String[] putRandomChars(final String movieName,final String[] guessedMovieName) {
         String[] temp = guessedMovieName;
         for (int i = 0; i < movieName.length() / 3; i++) {
@@ -218,7 +286,11 @@ public class Hangman {
         }
         return temp;
     }
-    
+    /**
+     * Method to grt the number of letters left in string
+     * @param guessedMovieName
+     * @return
+     */
     private int numberOfLettersLeft(final String[] guessedMovieName) {
         int count = 0;
         for (int i = 0; i < guessedMovieName.length; i++) {
@@ -228,7 +300,11 @@ public class Hangman {
         }
         return count;
     }
-    
+    /**
+     * Method to read the player details 
+     * and store them in a player array.
+     * @param count
+     */
     public void readPlayerDetails(final int count) {
         Scanner sc = new Scanner(System.in);
         // System.out.println(" numberOfPlayers " + this.players.length);
@@ -245,7 +321,10 @@ public class Hangman {
             this.players[i] = temp;
         }
     }
-    
+    /**
+     * Method to play the Game Hangman
+     * @param current
+     */
     public void playHangman(final int current) {
 
         try {

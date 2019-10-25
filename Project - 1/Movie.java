@@ -3,13 +3,23 @@ public class Movie {
     private String level;
     private String production;
     private String cast;
-
-    Movie(final String movieName, final String level, final String production, final String cast) {
+    /**
+     * Constuctor
+     * @param movieName
+     * @param level
+     * @param production
+     * @param cast
+     */
+    public Movie(final String movieName, final String level, final String production, final String cast) {
         this.movieName = movieName;
         this.level = level;
         this.production = production;
         this.cast = cast;
     }
+    /**
+     * Setters and Getters
+     * @return Strings
+     */
     public String getMovieName() {
         return movieName;
     }

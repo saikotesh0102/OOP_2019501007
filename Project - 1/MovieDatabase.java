@@ -6,13 +6,18 @@ public class MovieDatabase {
     private ArrayList<Movie> easyMovies;
     private ArrayList<Movie> mediumMovies;
     private ArrayList<Movie> hardMovies;
-
+    /**
+     * Constructor
+     */
     public MovieDatabase() {
         easyMovies = new ArrayList<>();
         mediumMovies = new ArrayList<>();
         hardMovies = new ArrayList<>();
     }
-
+    /**
+     * setters and getters
+     * @return array list
+     */
     public ArrayList<Movie> getEasyMovies() {
         return easyMovies;
     }

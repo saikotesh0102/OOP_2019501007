@@ -2,12 +2,19 @@ public class Player {
     
     private String playerName;
     private int playerScore;
-
+    /**
+     * Constructor
+     * @param playerName
+     * @param playerScore
+     */
     Player(final String playerName, final int playerScore) {
         this.playerName = playerName;
         this.playerScore = playerScore;
     }
-   
+    /**
+     * Setters and Getters
+     * @return String type
+     */
     public String getPlayerName() {
         return playerName;
     }

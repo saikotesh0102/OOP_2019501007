@@ -2,7 +2,12 @@ import java.io.*;
 import java.util.*;
 
 public final class Main {
-
+    /**
+     * Method to read the file and split them
+     * @param fileName
+     * @return
+     * @throws FileNotFoundException
+     */
     private static String[] readFile(final String fileName) throws FileNotFoundException {
         try {
             File file = new File(fileName);
@@ -22,7 +27,11 @@ public final class Main {
             return null;
         }
     }
-    
+    /**
+     * sorts the players based on the score in descending order.
+     * and displays the player name and score.
+     * @param players
+     */
     private static void leaderBoard(final Player[] players) {
         // System.out.println(players.length);
         if (players == null) {
@@ -42,7 +51,10 @@ public final class Main {
             System.out.println("Player Name : " + players[i].getPlayerName() + " PlayerScore : " + players[i].getPlayerScore());
         }
     }
-    
+    /**
+     * Main Method to create the objects and call the methods 
+     * @param args
+     */
     public static void main(final String[] args) {
         System.out.println("Welcome to Hangman");
         System.out.println("Enter the number of Players ");
