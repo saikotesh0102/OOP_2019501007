@@ -1,4 +1,4 @@
-abstract class AbstractList<E extends Comparable<E>> implements ListInterface<E>{
+public abstract class AbstractList<E extends Comparable<E>> implements ListInterface<E>{
     E[] list;
     int size;
     
