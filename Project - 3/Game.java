@@ -2,12 +2,17 @@ import java.util.*;
 import java.lang.*;
 
 public class Game {
-
+    /**
+     * Fields for the Class Game
+     */
     private int[][] board;
     private Player[] players;
     private ArrayList<Snake> snakes;
     private ArrayList<Ladder> ladders;
-
+    /**
+     * Constructor for the class Game
+     * @param numberOfPlayers
+     */
     public Game(final int numberOfPlayers) {
         final int maxLen = 10;
         board = new int[maxLen][maxLen];
@@ -15,7 +20,10 @@ public class Game {
         snakes = new ArrayList<>();
         ladders = new ArrayList<>();
     }
-
+    /**
+     * Setters and Getters
+     * @return
+     */
     public Player[] getPlayers() {
         return players;
     }
@@ -47,7 +55,10 @@ public class Game {
     public void setLadders(final ArrayList<Ladder> ladders) {
         this.ladders = ladders;
     }
-    
+    /**
+     * Method to create the Snakes at Particular Position
+     * and end them at respective positions
+     */
     public void createSnakes() {
         final int[] snakeStart = {43, 55, 70, 78, 95, 96};
         final int[] snakeEnd = {16, 34, 48, 42, 73, 82};
@@ -56,7 +67,10 @@ public class Game {
             snakes.add(new Snake(snakeStart[i], snakeEnd[i]));
         }
     }
-    
+    /**
+     * Method to create Ladders at particular position 
+     * and end them at respective position
+     */
     public void createLadders() {
         final int[] ladderStart = {6, 9, 20, 25, 53, 54, 61};
         final int[] ladderEnd = {27, 50, 39, 57, 72, 85, 82};
@@ -65,7 +79,10 @@ public class Game {
             ladders.add(new Ladder(ladderStart[i], ladderEnd[i]));
         }
     }
-
+    /**
+     * Method to take details of the player
+     * @param numberOfPlayers
+     */
     public void getDetails(final int numberOfPlayers) {
         Scanner scan = new Scanner(System.in);
         for (int i = 0; i < numberOfPlayers; i++) {
@@ -75,28 +92,34 @@ public class Game {
             this.players[i] = temp;
         }
     }
-    
+    /**
+     * Method to create the Game 
+     */
     public void createGame() {
         this.createSnakes();
         this.createLadders();
-        final int snake = 1;
-        final int ladder = 2;
-        final int maxLen = 10;
+        // final int snake = 1;
+        // final int ladder = 2;
+        // final int maxLen = 10;
         for (int i = 0; i < this.snakes.size(); i++) {
             int n = this.snakes.get(i).getStart();
-            int r = n / maxLen;
-            int c = n % maxLen;
-            this.board[r][c] = snake;
+            int r = n / 10;
+            int c = n % 10;
+            this.board[r][c] = 1;
         }
 
         for (int i = 0; i < this.ladders.size(); i++) {
             int n = this.ladders.get(i).getStart();
-            int r = n / maxLen;
-            int c = n % maxLen;
-            this.board[r][c] = ladder;
+            int r = n / 10;
+            int c = n % 10;
+            this.board[r][c] = 2;
         }
     }
-    
+    /**
+     * Method to get the end of the Ladder
+     * @param ladderStart
+     * @return Ladderend 
+     */
     public int getLadderEnd(final int ladderStart) {
         int ladderEnd = -1;
         for (int i = 0; i < ladders.size(); i++) {
@@ -107,7 +130,11 @@ public class Game {
         }
         return ladderEnd;
     }
-    
+    /**
+     * Method to get the end of the Snake
+     * @param snakeStart
+     * @return Snakeend
+     */
     public int getSnakeEnd(final int snakeStart) {
         int snakeEnd = 0;
         for (int i = 0; i < snakes.size(); i++) {

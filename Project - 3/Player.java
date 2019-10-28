@@ -1,17 +1,28 @@
 public class Player {
-    
+    /**
+     * Fields for the Class Player
+     */
     private String playerName;
     private int numberOfChances;
     private boolean gameWon = false;
     private int playerPosition;
-
+    /**
+     * Constructor for the class Player
+     * @param playerName
+     * @param playerPosition
+     * @param numberOfChances
+     * @param gameWon
+     */
     public Player(final String playerName, final int playerPosition,final int numberOfChances, final boolean gameWon) {
         this.playerName = playerName;
         this.numberOfChances = numberOfChances;
         this.gameWon = gameWon;
         this.playerPosition = playerPosition;
     }
-
+    /**
+     * Setters and Getters
+     * @return
+     */
     public String getPlayerName() {
         return playerName;
     }
