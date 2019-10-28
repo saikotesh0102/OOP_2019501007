@@ -1,9 +1,15 @@
 public class OrderedList<E extends Comparable<E>> extends AbstractList<E> {
+    /**
+     * Constructor
+     */
     public OrderedList(){
         this.list = (E[]) new Comparable[10];
         this.size =0;
     }
-    
+    /**
+     * Method to add an item to a list
+     * @param item
+     */
     public void add(E item) {
         if (size == list.length) {
             resize();
@@ -24,13 +30,21 @@ public class OrderedList<E extends Comparable<E>> extends AbstractList<E> {
             size += 1;
         }
     }
-    
+    /**
+     * Method to addall items to a list
+     * @param lst
+     * @throws InvalidIndexException
+     */
     public void addAll(List<E> lst) throws InvalidIndexException {
         for (int i = 0; i < lst.size(); i++){
             this.add(lst.get(i));
         }
     }
-    
+    /**
+     * Method to rearrange elements
+     * @param i
+     * @param temp
+     */
     private void rearrange(int i, E temp) {
         for (int j = i + 1; j < size - 1; j++) {
             list[j] = temp;

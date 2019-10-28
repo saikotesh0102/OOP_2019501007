@@ -1,9 +1,15 @@
 class List<E extends Comparable<E>> extends AbstractList<E> {
+    /**
+     * Constructor to set the list and size
+     */
     public List(){
         this.list = (E[]) new Comparable[10];
         this.size =0;
     }
-    
+    /**
+     * Method to add item to a list
+     * @param item
+     */
     public void add(E item) {
         if (size == list.length) {
             resize();
@@ -11,7 +17,12 @@ class List<E extends Comparable<E>> extends AbstractList<E> {
         list[size] = item;
         size += 1;
     }
-    
+    /**
+     * Method to add an item at a particular index in a list
+     * @param index
+     * @param item
+     * @throws InvalidIndexException
+     */
     public void add(int index, E item) throws InvalidIndexException {
         if (index < size && index >=0){
             E temp2;
