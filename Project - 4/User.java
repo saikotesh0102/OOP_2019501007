@@ -1,7 +1,7 @@
-class User {
-    String userName;
-    Cart cart;
-    String coupon;
+public class User {
+    private String userName;
+    private Cart cart;
+    private String coupon;
 
     public String getUserName() {
         return userName;

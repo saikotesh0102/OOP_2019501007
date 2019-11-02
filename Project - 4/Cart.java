@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.*;
 
-class Cart extends User{
+public class Cart extends User{
     
     ArrayList<Product> products;
     
@@ -11,6 +11,4 @@ class Cart extends User{
     void add(Product product) {
         this.products.add(product);
     }
-   
-    
 }

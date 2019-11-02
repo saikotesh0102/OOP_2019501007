@@ -1,15 +1,22 @@
-class Product {
+public class Product {
 
-    String productID;
-    String productName;
-    int productQuantity;
-    double productPrice;
+    private String productID;
+    private String productName;
+    private int productQuantity;
+    private double productPrice;
+
+    public Product(final String productID, final String productName, final int productQuantity, final double productPrice) {
+        this.productID = productID;
+        this.productName = productName;
+        this.productQuantity = productQuantity;
+        this.productPrice = productPrice;
+    }
 
     public String getProductID() {
         return productID;
     }
 
-    public void setProductID(String productID) {
+    public void setProductID(final String productID) {
         this.productID = productID;
     }
 
@@ -17,7 +24,7 @@ class Product {
         return productName;
     }
 
-    public void setProductName(String productName) {
+    public void setProductName(final String productName) {
         this.productName = productName;
     }
 
@@ -25,7 +32,7 @@ class Product {
         return productQuantity;
     }
 
-    public void setProductQuantity(int productQuantity) {
+    public void setProductQuantity(final int productQuantity) {
         this.productQuantity = productQuantity;
     }
 
@@ -33,15 +40,7 @@ class Product {
         return productPrice;
     }
 
-    public void setProductPrice(double productPrice) {
+    public void setProductPrice(final double productPrice) {
         this.productPrice = productPrice;
     }
-
-    public Product(String productID, String productName, int productQuantity, double productPrice) {
-        this.productID = productID;
-        this.productName = productName;
-        this.productQuantity = productQuantity;
-        this.productPrice = productPrice;
-    }
-    
 }
