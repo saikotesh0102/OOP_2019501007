@@ -18,7 +18,7 @@ public class TestRunner {
    public static void main(String[] args) {
       Result result = JUnitCore.runClasses(TestJUnit.class);
 
-      if (result.wasSuccessful() == true) {
+      if (result.wasSuccessful()) {
          System.out.println("");
          System.out.println("Great!!! All test cases passed.....");
          System.out.println("");
